@@ -21,10 +21,10 @@ public class BattleDamageUI : MonoBehaviour {
 		transform.eulerAngles = cam.eulerAngles;
 		float scaleHelp = Vector3.Distance (transform.position,cam.position) * (randomizer / 1.5f) / 170;
 		transform.localScale = new Vector3(scaleHelp,scaleHelp,scaleHelp);
-		transform.position += cam.TransformDirection (Vector3.up * 7 * randomizer * Time.deltaTime);
-		timer += Time.deltaTime * randomizer;
+		transform.position += cam.TransformDirection (Vector3.up * 7 * randomizer * Time.unscaledDeltaTime);
+		timer += Time.unscaledDeltaTime * randomizer;
 		if(timer > 0.5f){
-		txt.color = Color.Lerp (txt.color,Color.clear,Time.deltaTime * 3f);
+			txt.color = Color.Lerp (txt.color,Color.clear,Time.unscaledDeltaTime * 3f);
 		}
 		if(timer > 1.7f){
 			txt.color = Color.clear;

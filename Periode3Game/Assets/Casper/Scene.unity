@@ -7090,7 +7090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5347363, g: 0, b: 0.8161765, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8035,7 +8035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4705882, g: 0.4705882, b: 0.4705882, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11976,6 +11976,11 @@ MonoBehaviour:
   - {fileID: 390943059}
   - {fileID: 1728912821}
   atackNameUI: {fileID: 920790751}
+  buttonObjects:
+  - {fileID: 1632946623}
+  - {fileID: 1616826244}
+  - {fileID: 511823686}
+  - {fileID: 1237072343}
   charge:
   - 0
   - 0
@@ -11988,6 +11993,7 @@ MonoBehaviour:
   state: normal
   atackingPlayer: 0
   fadeIn: {fileID: 1129592554}
+  fadeColor: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}
 --- !u!4 &1685864971
 Transform:
   m_ObjectHideFlags: 0
