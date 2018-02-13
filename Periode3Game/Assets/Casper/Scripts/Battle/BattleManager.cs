@@ -102,8 +102,8 @@ public class BattleManager : MonoBehaviour
 			charge [2] = 200;
 			charge [3] = 200;
 		}
-		for (int i = 0; i < buttonObjects.Length; i++){//test
-			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,Vector3.one,Time.deltaTime);
+		for (int i = 0; i < buttonObjects.Length; i++){
+			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,Vector3.one,Time.deltaTime * 10);
 		}
 
 		if (fadeIn.color != Color.clear) {

@@ -41,7 +41,8 @@ public class BattleUIBullet : MonoBehaviour {
 		if (Input.GetAxisRaw (buttonName) == 1) {
 			if (buttonDown == false) {
 				buttonDown = true;
-				bufferButton = 0.05f;
+				//bufferButton = 0.05f;
+				manager.buttonObjects[player].transform.localScale = new Vector3(1.25f,1.25f,1.25f);
 			}
 		} else {
 			buttonDown = false;
@@ -51,7 +52,8 @@ public class BattleUIBullet : MonoBehaviour {
 	void OnTriggerStay(Collider col){
 		if(manager.state == "normal"){
 		if(col.tag == "BulletHit"){
-			if(bufferButton > 0){
+			//if(bufferButton > 0){
+				if(manager.buttonObjects[player].transform.localScale.x > 1){
 				bufferButton = 0;
 				manager.DoDamage (manager.enemies[0].gameObject,100,Random.Range(0.85f,1.15f));
 				manager.charge[player] += 15 * Random.Range(0.85f,1.15f);
