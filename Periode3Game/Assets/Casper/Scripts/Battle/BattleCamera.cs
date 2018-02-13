@@ -33,10 +33,10 @@ public class BattleCamera : MonoBehaviour
 	{
 		//if (transform.position != pathOrder [curPathPoint]) {
 		if (Vector3.Distance (cam.position, pathOrder [curPathPoint].position) > 0.3f) {
-			cam.position = Vector3.MoveTowards (cam.position, pathOrder [curPathPoint].position, Time.deltaTime * speed);
+			cam.position = Vector3.MoveTowards (cam.position, pathOrder [curPathPoint].position, Time.unscaledDeltaTime * speed);
 			if (lookAtEnemy == false) {
 				//Debug.Log (curPathPoint);
-				cam.eulerAngles = Vector3.Lerp (cam.eulerAngles, pathOrder [curPathPoint - 1].eulerAngles, Time.deltaTime * 2);
+				cam.eulerAngles = Vector3.Lerp (cam.eulerAngles, pathOrder [curPathPoint - 1].eulerAngles, Time.unscaledDeltaTime * 2);
 			} else {
 				cam.LookAt (manager.enemies [0].transform.position);
 			}

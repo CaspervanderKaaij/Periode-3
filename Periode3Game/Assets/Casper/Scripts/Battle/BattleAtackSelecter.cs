@@ -17,6 +17,7 @@ public class BattleAtackSelecter : MonoBehaviour
 		canPress = false;
 		manager = GameObject.FindObjectOfType<BattleManager> ();
 		canPress = false;
+		transform.position = positions [curPos].transform.position;
 	}
 
 	void Update ()
