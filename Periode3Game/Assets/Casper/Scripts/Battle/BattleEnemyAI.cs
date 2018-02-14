@@ -35,6 +35,11 @@ public class BattleEnemyAI : MonoBehaviour {
 			}
 		} else if(state == "think"){
 			timer += Time.deltaTime;
+			if(manager.coolDownTimer != 0){
+				timer = 0;
+			} else if(manager.atackNameUI.activeSelf == true){
+				timer = 0;
+			}
 			if(timer > thinkTime){
 				state = "atack";
 			}

@@ -32,14 +32,21 @@ public class BattleManager : MonoBehaviour
 	//[HideInInspector]
 	public string state = "normal";
 	public int atackingPlayer = 2;
-	private float coolDownTimer = 0;
+	[HideInInspector]
+	public float coolDownTimer = 0;
 	public Image fadeIn;
 	public Color fadeColor;
+	[HideInInspector]
+	public List<float> abxyCooldown;
 
 	private GameObject victory;
 
 	void Start ()
 	{
+		abxyCooldown.Add (0);
+		abxyCooldown.Add (0);
+		abxyCooldown.Add (0);
+		abxyCooldown.Add (0);
 		fadeIn.color = Color.clear;
 		victory = GameObject.Find ("Victory");
 		victory.SetActive (false);
@@ -103,7 +110,15 @@ public class BattleManager : MonoBehaviour
 			charge [3] = 200;
 		}
 		for (int i = 0; i < buttonObjects.Length; i++){
-			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,Vector3.one,Time.deltaTime * 10);
+			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,new Vector3(1,1,buttonObjects[i].transform.localScale.z),Time.deltaTime * 10);
+			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,new Vector3(buttonObjects[i].transform.localScale.x,buttonObjects[i].transform.localScale.y,1),Time.deltaTime);
+			abxyCooldown [i] -= Time.unscaledDeltaTime;
+			if(abxyCooldown[i] < 0){
+				abxyCooldown [i] = 0;
+			}
+			if(buttonObjects[i].transform.localScale.z != 1){
+				abxyCooldown [i] = buttonObjects [i].transform.localScale.z - 1;
+			}
 		}
 
 		if (fadeIn.color != Color.clear) {
