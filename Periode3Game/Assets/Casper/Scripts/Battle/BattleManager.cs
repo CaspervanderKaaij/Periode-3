@@ -109,6 +109,15 @@ public class BattleManager : MonoBehaviour
 			charge [2] = 200;
 			charge [3] = 200;
 		}
+
+		for (int i = 0; i < charge.Length; i++) {
+			if(charge[i] > 200){
+				charge [i] = 200;
+			} else if(charge[i] < 0){
+				charge [i] = 0;
+			}
+		}
+
 		for (int i = 0; i < buttonObjects.Length; i++){
 			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,new Vector3(1,1,buttonObjects[i].transform.localScale.z),Time.deltaTime * 10);
 			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,new Vector3(buttonObjects[i].transform.localScale.x,buttonObjects[i].transform.localScale.y,1),Time.deltaTime);
