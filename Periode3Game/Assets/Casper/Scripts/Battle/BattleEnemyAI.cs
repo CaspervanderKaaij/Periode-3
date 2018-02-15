@@ -13,9 +13,13 @@ public class BattleEnemyAI : MonoBehaviour {
 	private BattleManager manager;
 	public string atackName = "Starlight Kick";
 	public GameObject cam;
+	private bool boolHelper = false;
+	public int agro = 0;
 
 	void Start () {
 		manager = GameObject.FindObjectOfType<BattleManager> ();
+		agro = Random.Range (0,manager.players.Count);
+		Debug.Log (manager.players.Count);
 		cam.SetActive (false);
 	}
 
@@ -55,5 +59,18 @@ public class BattleEnemyAI : MonoBehaviour {
 				manager.BackToNormal (true);
 			}
 		}
+		if (state == "topple") {
+			if(boolHelper == false){
+			StartCoroutine (ToppleTimer(15));
+			boolHelper = true;
+			}
+		}
+		Vector3 agroPos = manager.players [agro].transform.position;
+		transform.LookAt (new Vector3(agroPos.x,transform.position.y,agroPos.z));
+	}
+	private IEnumerator ToppleTimer(float time){
+		yield return new WaitForSeconds (time);
+		state = "normal";
+		boolHelper = false;
 	}
 }

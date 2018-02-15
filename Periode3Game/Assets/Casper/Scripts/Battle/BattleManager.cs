@@ -74,12 +74,17 @@ public class BattleManager : MonoBehaviour
 		//DoDamage (enemies[0].gameObject,100,Random.Range(0.85f,1.15f));
 	}
 
-	public void DoDamage (GameObject sandBag, float damage, float random)
+	public void DoDamage (GameObject sandBag, float damage, float random, bool topple)
 	{
 		GameObject uidmg = GameObject.Instantiate (damageUI, sandBag.transform.position, Quaternion.identity);
 		uidmg.GetComponent<TextMesh> ().text = "" + Mathf.RoundToInt (damage * random);
 		if (sandBag.tag == "Enemy") {
 			enemyHealth [0] -= Mathf.RoundToInt (damage * random);
+			if (topple == true) {
+				if (sandBag.GetComponent<BattleEnemyAI> ().state == "think") {
+					sandBag.GetComponent<BattleEnemyAI> ().state = "topple";
+				}
+			}
 		} else if (sandBag.tag == "Player") {
 			for (int i = 0; i < players.Count; i++) {
 				if (players [i] == sandBag) {
@@ -111,21 +116,21 @@ public class BattleManager : MonoBehaviour
 		}
 
 		for (int i = 0; i < charge.Length; i++) {
-			if(charge[i] > 200){
+			if (charge [i] > 200) {
 				charge [i] = 200;
-			} else if(charge[i] < 0){
+			} else if (charge [i] < 0) {
 				charge [i] = 0;
 			}
 		}
 
-		for (int i = 0; i < buttonObjects.Length; i++){
-			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,new Vector3(1,1,buttonObjects[i].transform.localScale.z),Time.deltaTime * 10);
-			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects[i].transform.localScale,new Vector3(buttonObjects[i].transform.localScale.x,buttonObjects[i].transform.localScale.y,1),Time.deltaTime);
+		for (int i = 0; i < buttonObjects.Length; i++) {
+			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects [i].transform.localScale, new Vector3 (1, 1, buttonObjects [i].transform.localScale.z), Time.deltaTime * 10);
+			buttonObjects [i].transform.localScale = Vector3.MoveTowards (buttonObjects [i].transform.localScale, new Vector3 (buttonObjects [i].transform.localScale.x, buttonObjects [i].transform.localScale.y, 1), Time.deltaTime);
 			abxyCooldown [i] -= Time.unscaledDeltaTime;
-			if(abxyCooldown[i] < 0){
+			if (abxyCooldown [i] < 0) {
 				abxyCooldown [i] = 0;
 			}
-			if(buttonObjects[i].transform.localScale.z != 1){
+			if (buttonObjects [i].transform.localScale.z != 1) {
 				abxyCooldown [i] = buttonObjects [i].transform.localScale.z - 1;
 			}
 		}
@@ -135,9 +140,9 @@ public class BattleManager : MonoBehaviour
 		}
 		bool canPress;
 		canPress = true;
-		if(atackNameUI.activeSelf == true){
+		if (atackNameUI.activeSelf == true) {
 			canPress = false;
-		} else if(coolDownTimer != 0){
+		} else if (coolDownTimer != 0) {
 			canPress = false;
 		}
 		if (canPress == true) {
@@ -163,34 +168,34 @@ public class BattleManager : MonoBehaviour
 				state = "turnAtack";
 			}
 
-		if (turnAtack == true) {
-			TurnAtack ();
-			camSlowMotionEffect.SetActive (true);
-			selectAtackUI [atackingPlayer - 1].SetActive (true);
-		} else {
-			camSlowMotionEffect.SetActive (false);
-			selectAtackUI [atackingPlayer - 1].SetActive (false);
-			//}
-			if (Input.GetAxis ("DPadUpDown") != 0) {
-				bool canAtack = false;
-				if (charge [atackingPlayer - 1] >= 100) {
-					canAtack = true;
+			if (turnAtack == true) {
+				TurnAtack ();
+				camSlowMotionEffect.SetActive (true);
+				selectAtackUI [atackingPlayer - 1].SetActive (true);
+			} else {
+				camSlowMotionEffect.SetActive (false);
+				selectAtackUI [atackingPlayer - 1].SetActive (false);
+				//}
+				if (Input.GetAxis ("DPadUpDown") != 0) {
+					bool canAtack = false;
+					if (charge [atackingPlayer - 1] >= 100) {
+						canAtack = true;
+					}
+					if (canAtack == true) {
+						turnAtack = true;
+					}
 				}
-				if (canAtack == true) {
-					turnAtack = true;
-				}
-			}
-			if (Input.GetAxis ("DPadLeftRight") != 0) {
-				bool canAtack = false;
-				if (charge [atackingPlayer - 1] >= 100) {
-					canAtack = true;
-				}
-				if (canAtack == true) {
-					turnAtack = true;
+				if (Input.GetAxis ("DPadLeftRight") != 0) {
+					bool canAtack = false;
+					if (charge [atackingPlayer - 1] >= 100) {
+						canAtack = true;
+					}
+					if (canAtack == true) {
+						turnAtack = true;
+					}
 				}
 			}
 		}
-	}
 		if (state == "enemyAtack") {
 			if (atackNameUI.activeSelf == false) {
 				fadeIn.color = fadeColor;

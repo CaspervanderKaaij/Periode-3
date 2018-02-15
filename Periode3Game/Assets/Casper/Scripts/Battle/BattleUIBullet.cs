@@ -62,7 +62,7 @@ public class BattleUIBullet : MonoBehaviour
 				//if(bufferButton > 0){
 				if (manager.buttonObjects [player].transform.localScale.x > 1) {
 					bufferButton = 0;
-					manager.DoDamage (manager.enemies [0].gameObject, 100, Random.Range (0.85f, 1.15f));
+					manager.DoDamage (manager.enemies [0].gameObject, 100, Random.Range (0.85f, 1.15f),false);
 					manager.charge [player] += 15 * Random.Range (0.85f, 1.15f);
 					Vector3 scale = manager.buttonObjects[player].transform.localScale;
 					manager.buttonObjects [player].transform.localScale = new Vector3 (scale.x,scale.y,1);

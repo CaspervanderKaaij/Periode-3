@@ -26,7 +26,7 @@ public class BattleCharacter : MonoBehaviour {
 				if(timer > 0.5f){
 					if(hasAtacked == false){
 						hasAtacked = true;
-						manager.DoDamage (manager.enemies[0],8001,Random.Range(0.9f,1.05f));
+						manager.DoDamage (manager.enemies[0],8001,Random.Range(0.9f,1.05f),true);
 					}
 				}
 
