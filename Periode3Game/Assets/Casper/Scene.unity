@@ -7732,6 +7732,8 @@ MonoBehaviour:
   target: 0
   atackName: Starlight Kick
   cam: {fileID: 2043807994}
+  agro: 0
+  curState: 0
 --- !u!4 &1123058429 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400116, guid: 6e48caa06467cdc418e0b1a9eb408c7e, type: 3}
@@ -12106,14 +12108,16 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  playerHealth: 64000000640000006400000000000000
+  playerHealth: 64000000640000006400000064000000
   enemyHealth: []
   timeScale: 1
   turnAtack: 0
   state: normal
   atackingPlayer: 0
+  coolDownTimer: 0
   fadeIn: {fileID: 1129592554}
   fadeColor: {r: 0.52205884, g: 0.52205884, b: 0.52205884, a: 1}
+  abxyCooldown: []
 --- !u!4 &1685864971
 Transform:
   m_ObjectHideFlags: 0

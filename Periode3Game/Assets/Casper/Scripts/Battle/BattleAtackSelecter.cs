@@ -72,7 +72,7 @@ public class BattleAtackSelecter : MonoBehaviour
 				}
 				if (canSelect == true) {
 					canPress = false;
-					manager.state = "atack";
+					manager.curState = BattleManager.State.Attack;//Attack
 					manager.fadeIn.color = manager.fadeColor;
 					//Debug.Log (manager.atackingPlayer - 1);
 					//Debug.Log (manager.players[manager.atackingPlayer - 1].name);

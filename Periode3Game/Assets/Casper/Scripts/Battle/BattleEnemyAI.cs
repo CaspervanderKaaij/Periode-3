@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BattleEnemyAI : MonoBehaviour {
 
-	public string state = "normal";
+	//public string state = "normal";
 	public float timer = 0;
 	public float chargeFinishTime = 5;
 	public float thinkTime = 1;
@@ -14,18 +14,48 @@ public class BattleEnemyAI : MonoBehaviour {
 	public string atackName = "Starlight Kick";
 	public GameObject cam;
 	private bool boolHelper = false;
+	private bool damageHelper = false;
 	public int agro = 0;
+
+	public enum State{
+		Normal,
+		Think,
+		Attack,
+		Topple
+	}
+
+	public State curState;
 
 	void Start () {
 		manager = GameObject.FindObjectOfType<BattleManager> ();
 		agro = Random.Range (0,manager.players.Count);
 		Debug.Log (manager.players.Count);
 		cam.SetActive (false);
+		curState = State.Normal;
+		//if (curState == State.Attack) {
+			
+		//}
 	}
 
+	/*public void CheckState(){
+		switch (curState) {
+		case curState == State.Attack :
+			// do attack stuff;
+			break;
+		case curState == State.Normal :
+			// do normal stuff;
+			break;
+		
+			
+		}
+	}
+*/
+
+
+
 	void Update () {
-		if(state == "normal"){
-			if (manager.state == "normal") {
+		if (curState == State.Normal) {
+			if (manager.curState == BattleManager.State.Normal) {//normal
 				timer += Time.deltaTime;
 			} else {
 				timer = 0;
@@ -35,9 +65,9 @@ public class BattleEnemyAI : MonoBehaviour {
 			}
 			if(timer > chargeFinishTime){
 				timer = 0;
-				state = "think";
+				curState = State.Think;
 			}
-		} else if(state == "think"){
+		} else if(curState == State.Think){
 			timer += Time.deltaTime;
 			if(manager.coolDownTimer != 0){
 				timer = 0;
@@ -45,21 +75,28 @@ public class BattleEnemyAI : MonoBehaviour {
 				timer = 0;
 			}
 			if(timer > thinkTime){
-				state = "atack";
+				curState = State.Attack;
 			}
-		} else if(state == "atack"){
-			manager.state = "enemyAtack";
+		} else if(curState == State.Attack){
+			manager.curState = BattleManager.State.EnemyAttack;//enemyAttack
 			cam.SetActive (true);
 			manager.atackNameUI.transform.GetChild (1).GetComponent<Text> ().text = atackName;
 			timer += Time.deltaTime;
+			if(timer > 1){
+				if(damageHelper == false){
+					damageHelper = true;
+					manager.DoDamage (manager.players[agro],10,Random.Range(0.9f,1.1f),false);
+				}
+			}
 			if(timer > 2.5f){
 				cam.SetActive (false);
 				timer = 0;
-				state = "normal";
+				curState = State.Normal;
+				damageHelper = false;
 				manager.BackToNormal (true);
 			}
 		}
-		if (state == "topple") {
+		if (curState == State.Topple) {
 			if(boolHelper == false){
 			StartCoroutine (ToppleTimer(15));
 			boolHelper = true;
@@ -70,7 +107,7 @@ public class BattleEnemyAI : MonoBehaviour {
 	}
 	private IEnumerator ToppleTimer(float time){
 		yield return new WaitForSeconds (time);
-		state = "normal";
+		curState = State.Normal;
 		boolHelper = false;
 	}
 }

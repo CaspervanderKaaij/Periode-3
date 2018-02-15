@@ -36,7 +36,7 @@ public class BattleUIBullet : MonoBehaviour
 
 	void Update ()
 	{
-		if (manager.state == "normal") {
+		if (manager.curState == BattleManager.State.Normal) {
 			transform.Translate (-speed * Time.deltaTime, 0, 0);
 		}
 		if (bufferButton > 0) {
@@ -57,7 +57,7 @@ public class BattleUIBullet : MonoBehaviour
 
 	void OnTriggerStay (Collider col)
 	{
-		if (manager.state == "normal") {
+		if (manager.curState == BattleManager.State.Normal) {//normal
 			if (col.tag == "BulletHit") {
 				//if(bufferButton > 0){
 				if (manager.buttonObjects [player].transform.localScale.x > 1) {
@@ -66,6 +66,7 @@ public class BattleUIBullet : MonoBehaviour
 					manager.charge [player] += 15 * Random.Range (0.85f, 1.15f);
 					Vector3 scale = manager.buttonObjects[player].transform.localScale;
 					manager.buttonObjects [player].transform.localScale = new Vector3 (scale.x,scale.y,1);
+					manager.abxyCooldown [player] = 0;
 					Destroy (gameObject);
 				}
 			} else if (col.tag == "BulletMiss") {

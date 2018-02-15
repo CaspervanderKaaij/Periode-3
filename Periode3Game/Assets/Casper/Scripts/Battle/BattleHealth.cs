@@ -22,7 +22,7 @@ public class BattleHealth : MonoBehaviour {
 		if(health <= 0){
 			manager.enemies.Remove (manager.enemies[enemy]);
 			if(manager.enemies.Count == 0){
-				manager.state = "Victory";
+				manager.curState = BattleManager.State.Victory;//Victory
 			}
 		}
 	}

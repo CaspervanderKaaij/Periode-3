@@ -30,7 +30,17 @@ public class BattleManager : MonoBehaviour
 	public float timeScale = 1;
 	public bool turnAtack = false;
 	//[HideInInspector]
-	public string state = "normal";
+	//public string state = "normal";
+	public enum State{
+		Normal,
+		PlayerAttack,
+		EnemyAttack,
+		Victory,
+		End,
+		Cooldown,
+		Attack
+	}
+	public State curState;
 	public int atackingPlayer = 2;
 	[HideInInspector]
 	public float coolDownTimer = 0;
@@ -43,6 +53,7 @@ public class BattleManager : MonoBehaviour
 
 	void Start ()
 	{
+		curState = State.Normal;
 		abxyCooldown.Add (0);
 		abxyCooldown.Add (0);
 		abxyCooldown.Add (0);
@@ -81,8 +92,9 @@ public class BattleManager : MonoBehaviour
 		if (sandBag.tag == "Enemy") {
 			enemyHealth [0] -= Mathf.RoundToInt (damage * random);
 			if (topple == true) {
-				if (sandBag.GetComponent<BattleEnemyAI> ().state == "think") {
-					sandBag.GetComponent<BattleEnemyAI> ().state = "topple";
+				BattleEnemyAI ai = sandBag.GetComponent<BattleEnemyAI> ();
+				if (ai.curState ==  BattleEnemyAI.State.Think) {//think
+					ai.curState = BattleEnemyAI.State.Topple;
 				}
 			}
 		} else if (sandBag.tag == "Player") {
@@ -161,11 +173,11 @@ public class BattleManager : MonoBehaviour
 						}
 					}
 				}
-				if (state == "turnAtack") {
-					state = "normal";
+				if (curState == State.PlayerAttack) {
+					curState = State.Normal;
 				}
 			} else {
-				state = "turnAtack";
+				curState = State.PlayerAttack;
 			}
 
 			if (turnAtack == true) {
@@ -196,27 +208,27 @@ public class BattleManager : MonoBehaviour
 				}
 			}
 		}
-		if (state == "enemyAtack") {
+		if (curState == State.EnemyAttack) {//enemyAttack
 			if (atackNameUI.activeSelf == false) {
 				fadeIn.color = fadeColor;
 			}
 			atackNameUI.SetActive (true);
 		}
 
-		if (state == "Victory") {
+		if (curState == State.Victory) {//Victory
 			victory.SetActive (true);
 			for (int i = 0; i < GameObject.Find ("Canvas").transform.childCount; i++) {
 				if (GameObject.Find ("Canvas").transform.GetChild (i).name != "Victory") {
 					Destroy (GameObject.Find ("Canvas").transform.GetChild (i).gameObject);
 				}
 			}
-			state = "fuck";
+			curState = State.End;//fuck
 		}
 
-		if (state == "cooldown") {
+		if (curState == State.Cooldown) {//cooldown
 			coolDownTimer = Mathf.MoveTowards (coolDownTimer, 0, Time.deltaTime);
 			if (coolDownTimer == 0) {
-				state = "normal";
+				curState = State.Normal;//normal
 			}
 		}
 
@@ -227,9 +239,9 @@ public class BattleManager : MonoBehaviour
 	{
 		fadeIn.color = fadeColor;
 		if (coolDown == false) {
-			state = "normal";
+			curState = State.Normal;
 		} else {
-			state = "cooldown";
+			curState = State.Cooldown;
 			coolDownTimer = 0.5f;
 		}
 		//charge [atackingPlayer - 1] = 0;

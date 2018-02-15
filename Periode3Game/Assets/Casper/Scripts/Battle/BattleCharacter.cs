@@ -18,7 +18,7 @@ public class BattleCharacter : MonoBehaviour {
 	}
 
 	void Update () {
-		if (manager.state == "atack") {
+		if (manager.curState == BattleManager.State.Attack) {//Attack
 			if (manager.atackingPlayer == playerNumber) {
 				cam.SetActive (true);
 				//Debug.Log ("Player" + playerNumber + " is using atack number: " + atackNumber);
