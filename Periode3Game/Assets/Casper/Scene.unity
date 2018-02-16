@@ -7725,7 +7725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1642593315b994096a91da625e3cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: normal
   timer: 0
   chargeFinishTime: 8
   thinkTime: 1
@@ -7733,6 +7732,7 @@ MonoBehaviour:
   atackName: Starlight Kick
   cam: {fileID: 2043807994}
   agro: 0
+  agroList: 
   curState: 0
 --- !u!4 &1123058429 stripped
 Transform:
@@ -12112,7 +12112,7 @@ MonoBehaviour:
   enemyHealth: []
   timeScale: 1
   turnAtack: 0
-  state: normal
+  curState: 0
   atackingPlayer: 0
   coolDownTimer: 0
   fadeIn: {fileID: 1129592554}
