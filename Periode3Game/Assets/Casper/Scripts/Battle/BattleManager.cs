@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class BattleManager : MonoBehaviour
 {
@@ -27,13 +28,16 @@ public class BattleManager : MonoBehaviour
 	public List<float> enemyHealth;
 
 	[Header ("Handy's & helpers")]
+	public bool vibration = true;
 	public float timeScale = 1;
 	private float rhythmTimer = 0;
 	public bool rhythmTime = false;
+	private Coroutine vib;
 	public bool turnAtack = false;
 	//[HideInInspector]
 	//public string state = "normal";
-	public enum State{
+	public enum State
+	{
 		Normal,
 		PlayerAttack,
 		EnemyAttack,
@@ -42,6 +46,7 @@ public class BattleManager : MonoBehaviour
 		Cooldown,
 		Attack
 	}
+
 	public State curState;
 	public int atackingPlayer = 2;
 	[HideInInspector]
@@ -87,6 +92,11 @@ public class BattleManager : MonoBehaviour
 		//DoDamage (enemies[0].gameObject,100,Random.Range(0.85f,1.15f));
 	}
 
+	public void ToggleVibration ()
+	{
+		vibration = !vibration;
+	}
+
 	public void DoDamage (GameObject sandBag, float damage, float random, bool topple)
 	{
 		GameObject uidmg = GameObject.Instantiate (damageUI, sandBag.transform.position, Quaternion.identity);
@@ -95,7 +105,7 @@ public class BattleManager : MonoBehaviour
 			enemyHealth [0] -= Mathf.RoundToInt (damage * random);
 			if (topple == true) {
 				BattleEnemyAI ai = sandBag.GetComponent<BattleEnemyAI> ();
-				if (ai.curState ==  BattleEnemyAI.State.Think) {//think
+				if (ai.curState == BattleEnemyAI.State.Think) {//think
 					ai.curState = BattleEnemyAI.State.Topple;
 				}
 			}
@@ -114,12 +124,29 @@ public class BattleManager : MonoBehaviour
 		GameObject.Instantiate (camPathPrefabs [i], Vector3.zero, Quaternion.identity);
 	}
 
+	public void Vibrate (float time, float strength)
+	{
+		if (vibration == true) {
+			GamePad.SetVibration (0, strength, strength);
+			if (vib != null) {
+				StopCoroutine (vib);
+			}
+			vib = StartCoroutine (VibrateStop (time));
+		}
+	}
+
+	IEnumerator VibrateStop (float time)
+	{
+		yield return new WaitForSecondsRealtime (time);
+		GamePad.SetVibration (0, 0, 0);
+	}
+
 	void Update ()
 	{
-
 		rhythmTimer += Time.unscaledDeltaTime;
 		if (rhythmTimer > 0.5f) {
 			rhythmTimer -= 0.5f;
+			//Vibrate (0.1f,0.3f);
 			rhythmTime = true;
 		} else {
 			rhythmTime = false;
@@ -203,18 +230,22 @@ public class BattleManager : MonoBehaviour
 					bool canAtack = false;
 					if (charge [atackingPlayer - 1] >= 100) {
 						canAtack = true;
+						Vibrate (0.1f, 1);
 					}
 					if (canAtack == true) {
 						turnAtack = true;
+						Vibrate (0.1f, 1);
 					}
 				}
 				if (Input.GetAxis ("DPadLeftRight") != 0) {
 					bool canAtack = false;
 					if (charge [atackingPlayer - 1] >= 100) {
 						canAtack = true;
+						Vibrate (0.1f, 1);
 					}
 					if (canAtack == true) {
 						turnAtack = true;
+						Vibrate (0.1f, 1);
 					}
 				}
 			}

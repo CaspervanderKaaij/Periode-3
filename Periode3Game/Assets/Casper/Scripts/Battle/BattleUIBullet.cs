@@ -76,6 +76,7 @@ public class BattleUIBullet : MonoBehaviour
 					GameObject g = GameObject.Instantiate (effect,manager.buttonObjects[player].transform);
 					g.transform.position = g.transform.parent.position;
 					g.transform.SetParent(GameObject.FindGameObjectWithTag("UIBulletEffect").transform);
+					manager.Vibrate (0.1f,0.45f);
 					Destroy (gameObject);
 				}
 			} else if (col.tag == "BulletMiss") {

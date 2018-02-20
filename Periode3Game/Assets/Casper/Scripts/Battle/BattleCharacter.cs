@@ -27,6 +27,7 @@ public class BattleCharacter : MonoBehaviour {
 					if(hasAtacked == false){
 						hasAtacked = true;
 						manager.DoDamage (manager.enemies[0],8001,Random.Range(0.9f,1.05f),true);
+						manager.Vibrate (0.1f,1);
 						manager.enemies[0].GetComponent<BattleEnemyAI>().agroList.Add (playerNumber - 1);
 					}
 				}

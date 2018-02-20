@@ -71,6 +71,7 @@ public class BattleEnemyAI : MonoBehaviour {
 			}
 		}
 		if(timer > 2.5f){
+			manager.Vibrate (0.1f,1);
 			cam.SetActive (false);
 			timer = 0;
 			curState = State.Normal;

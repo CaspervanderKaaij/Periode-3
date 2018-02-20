@@ -74,6 +74,7 @@ public class BattleAtackSelecter : MonoBehaviour
 		}
 		if (manager.fadeIn.color.a <= 0.5f) {
 			if (Input.GetButtonDown ("A_Button")) {
+				manager.Vibrate (0.2f,1);
 				bool canSelect = false;
 				if (curPos < 3) {
 					canSelect = true;
