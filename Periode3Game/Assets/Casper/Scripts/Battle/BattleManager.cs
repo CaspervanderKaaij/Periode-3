@@ -28,6 +28,8 @@ public class BattleManager : MonoBehaviour
 
 	[Header ("Handy's & helpers")]
 	public float timeScale = 1;
+	private float rhythmTimer = 0;
+	public bool rhythmTime = false;
 	public bool turnAtack = false;
 	//[HideInInspector]
 	//public string state = "normal";
@@ -114,6 +116,15 @@ public class BattleManager : MonoBehaviour
 
 	void Update ()
 	{
+
+		rhythmTimer += Time.unscaledDeltaTime;
+		if (rhythmTimer > 0.5f) {
+			rhythmTimer -= 0.5f;
+			rhythmTime = true;
+		} else {
+			rhythmTime = false;
+		}
+
 		if (Input.GetKeyDown (KeyCode.R)) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 		}

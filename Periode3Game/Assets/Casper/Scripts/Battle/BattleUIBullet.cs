@@ -14,13 +14,10 @@ public class BattleUIBullet : MonoBehaviour
 	private int player = 0;
 	private bool buttonDown = false;
 	public GameObject effect;
-	private Vector3 startScale;
-	private float timer = 0;
 	//private bool abxyCooldownNextFrame = false;
 
 	void Start ()
 	{
-		startScale = transform.localScale;
 		if (transform.gameObject.layer == 8) {
 			buttonName = "Y_Button";
 			player = 3;
@@ -41,15 +38,8 @@ public class BattleUIBullet : MonoBehaviour
 	void Update ()
 	{
 		
-		transform.localScale = Vector3.MoveTowards (transform.localScale,startScale,Time.deltaTime * 25);
 		if(Input.GetKeyDown(KeyCode.A)){
 			//transform.localScale = new Vector3(startScale.x + 1f,startScale.y + 1f,1);
-		}
-
-		timer += Time.deltaTime;
-		if(timer > 0.5f){
-			transform.localScale = new Vector3(startScale.x + 1f,startScale.y + 1f,1);
-			timer -= 0.5f;
 		}
 
 		if (manager.curState == BattleManager.State.Normal) {
