@@ -21,7 +21,7 @@ public class UIEffect : MonoBehaviour {
 		transform.localScale += new Vector3(Time.unscaledDeltaTime * scale, Time.unscaledDeltaTime * scale, Time.unscaledDeltaTime * scale);
 		if(fadeOut == true){
 			Image clr = transform.GetComponent<Image> ();
-			clr.color = new Color(clr.color.r,clr.color.g,clr.color.b,clr.color.a - 0.5f * Time.unscaledDeltaTime);
+			clr.color = new Color(clr.color.r,clr.color.g,clr.color.b,clr.color.a - 1.5f * Time.unscaledDeltaTime);
 		}
 	}
 }

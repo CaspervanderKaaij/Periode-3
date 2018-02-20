@@ -13,10 +13,14 @@ public class BattleUIBullet : MonoBehaviour
 	private BattleManager manager;
 	private int player = 0;
 	private bool buttonDown = false;
+	public GameObject effect;
+	private Vector3 startScale;
+	private float timer = 0;
 	//private bool abxyCooldownNextFrame = false;
 
 	void Start ()
 	{
+		startScale = transform.localScale;
 		if (transform.gameObject.layer == 8) {
 			buttonName = "Y_Button";
 			player = 3;
@@ -36,6 +40,18 @@ public class BattleUIBullet : MonoBehaviour
 
 	void Update ()
 	{
+		
+		transform.localScale = Vector3.MoveTowards (transform.localScale,startScale,Time.deltaTime * 25);
+		if(Input.GetKeyDown(KeyCode.A)){
+			//transform.localScale = new Vector3(startScale.x + 1f,startScale.y + 1f,1);
+		}
+
+		timer += Time.deltaTime;
+		if(timer > 0.5f){
+			transform.localScale = new Vector3(startScale.x + 1f,startScale.y + 1f,1);
+			timer -= 0.5f;
+		}
+
 		if (manager.curState == BattleManager.State.Normal) {
 			transform.Translate (-speed * Time.deltaTime, 0, 0);
 		}
@@ -67,6 +83,9 @@ public class BattleUIBullet : MonoBehaviour
 					Vector3 scale = manager.buttonObjects[player].transform.localScale;
 					manager.buttonObjects [player].transform.localScale = new Vector3 (scale.x,scale.y,1);
 					manager.abxyCooldown [player] = 0;
+					GameObject g = GameObject.Instantiate (effect,manager.buttonObjects[player].transform);
+					g.transform.position = g.transform.parent.position;
+					g.transform.SetParent(GameObject.FindGameObjectWithTag("UIBulletEffect").transform);
 					Destroy (gameObject);
 				}
 			} else if (col.tag == "BulletMiss") {

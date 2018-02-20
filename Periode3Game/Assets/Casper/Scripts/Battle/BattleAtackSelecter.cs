@@ -11,6 +11,7 @@ public class BattleAtackSelecter : MonoBehaviour
 	private bool canPress = false;
 	BattleManager manager;
 	public string[] atackName;
+	private Vector3 startScale;
 
 	void Start ()
 	{
@@ -18,10 +19,14 @@ public class BattleAtackSelecter : MonoBehaviour
 		manager = GameObject.FindObjectOfType<BattleManager> ();
 		canPress = false;
 		transform.position = positions [curPos].transform.position;
+		startScale = transform.localScale;
 	}
 
 	void Update ()
 	{
+
+		transform.localScale = Vector3.MoveTowards (transform.localScale,startScale,Time.unscaledDeltaTime * 3);
+
 		if(manager.atackNameUI.activeSelf == false){
 			transform.position = Vector3.Lerp(transform.position ,positions [curPos].transform.position,Time.unscaledDeltaTime * 30);
 			if (manager.fadeIn.color.a <= 0.5f) {
@@ -32,11 +37,14 @@ public class BattleAtackSelecter : MonoBehaviour
 								if (curPos != 3) {
 									if (curPos != 4) {
 										curPos += Mathf.RoundToInt (Input.GetAxisRaw ("DPadLeftRight"));
+										transform.localScale = new Vector3(startScale.x + 0.1f,startScale.y + 0.4f,1);
 									} else if (Input.GetAxisRaw ("DPadLeftRight") > 0) {
 										curPos += Mathf.RoundToInt (Input.GetAxisRaw ("DPadLeftRight"));
+										transform.localScale = new Vector3(startScale.x + 0.1f,startScale.y + 0.4f,1);
 									}
 								} else if (Input.GetAxisRaw ("DPadLeftRight") < 0) {
 									curPos += Mathf.RoundToInt (Input.GetAxisRaw ("DPadLeftRight"));
+									transform.localScale = new Vector3(startScale.x + 0.1f,startScale.y + 0.4f,1);
 								}
 							}
 						}
@@ -50,8 +58,10 @@ public class BattleAtackSelecter : MonoBehaviour
 					if (canPress == true) {
 						if (curPos < 4) {
 							curPos += (positions.Length / 2);
+							transform.localScale = new Vector3(startScale.x + 0.4f,startScale.y + 0.1f,1);
 						} else {
 							curPos -= (positions.Length / 2);
+							transform.localScale = new Vector3(startScale.x + 0.4f,startScale.y + 0.1f,1);
 						}
 					}
 					canPress = false;

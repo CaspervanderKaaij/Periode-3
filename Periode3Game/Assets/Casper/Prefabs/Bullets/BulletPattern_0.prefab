@@ -1251,6 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114320948893040570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1263,6 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114336168664432542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1275,6 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114402681321875738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1287,6 +1290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114435346392698750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1299,6 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114553604166307930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1311,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114555623464779474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1323,6 +1329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114557837078613832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1335,6 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114683230464420936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1347,6 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114759016543178516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1359,6 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114808363668870958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1371,6 +1381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
 --- !u!114 &114919995406673014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1383,3 +1394,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
+  effect: {fileID: 1613849093320474, guid: 05292d0cb07bb494c87aa06eeac970b7, type: 2}
