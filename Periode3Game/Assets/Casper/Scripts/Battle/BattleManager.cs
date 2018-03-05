@@ -21,6 +21,7 @@ public class BattleManager : MonoBehaviour
 	public GameObject[] selectAtackUI;
 	public GameObject atackNameUI;
 	public GameObject[] buttonObjects;
+	public GameObject victory;
 
 	[Header ("stats")]
 	public float[] charge;
@@ -56,7 +57,6 @@ public class BattleManager : MonoBehaviour
 	[HideInInspector]
 	public List<float> abxyCooldown;
 
-	private GameObject victory;
 
 	void Start ()
 	{
@@ -66,7 +66,6 @@ public class BattleManager : MonoBehaviour
 		abxyCooldown.Add (0);
 		abxyCooldown.Add (0);
 		fadeIn.color = Color.clear;
-		victory = GameObject.Find ("Victory");
 		victory.SetActive (false);
 		atackingPlayer = 2;
 		atackNameUI.SetActive (false);
