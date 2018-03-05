@@ -10,11 +10,13 @@ public class BattleCharacter : MonoBehaviour {
 	public GameObject cam;
 	public float timer = 0;
 	private bool hasAtacked = false;
+	public Animator anim;
 	//public string state = "normal";
 
 	void Start () {
 		manager = GameObject.FindObjectOfType<BattleManager> ();
 		timer = 0;
+		anim = transform.GetChild(0).GetComponent<Animator>();
 	}
 
 	void Update () {
@@ -45,6 +47,23 @@ public class BattleCharacter : MonoBehaviour {
 		} else {
 			cam.SetActive (false);
 			timer = 0;
+			if(Input.GetKeyDown(KeyCode.Space)){
+			//	Animate();
+			}
 		}
 	}
+	void Animate(){
+		int r = Random.Range(1,6);
+		Debug.Log(r);
+		anim.Play("Attack");
+		anim.SetBool("attacking",true);
+		anim.SetFloat("attackNumber",r);
+		StartCoroutine(StopAnim());
+	}
+
+	IEnumerator StopAnim(){
+		yield return new WaitForSeconds(Time.deltaTime);
+		anim.SetBool("attacking",false);
+	}
 }
+
