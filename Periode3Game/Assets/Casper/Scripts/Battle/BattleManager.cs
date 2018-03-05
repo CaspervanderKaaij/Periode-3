@@ -14,6 +14,7 @@ public class BattleManager : MonoBehaviour
 	public List<GameObject> enemies;
 
 	[Header ("Other object")]
+	public GameObject blankAudioObject;
 	public GameObject damageUI;
 	public GameObject[] camPathPrefabs;
 	public BattleHealth[] enemyHealthUI;
@@ -140,8 +141,35 @@ public class BattleManager : MonoBehaviour
 		GamePad.SetVibration (0, 0, 0);
 	}
 
+	public void PlaySound (AudioClip clip, float volume, float spatialBlend, Vector3 pos)
+	{
+		GameObject p;
+		p = Instantiate (blankAudioObject);
+		p.transform.position = pos;
+		AudioSource pAudio = p.GetComponent<AudioSource> ();
+		pAudio.clip = clip;
+		pAudio.volume = volume;
+		pAudio.Play ();
+		pAudio.spatialBlend = spatialBlend;
+		Destroy (p, clip.length);
+	}
+
 	void Update ()
 	{
+		if(curState == State.Normal){
+			if(Input.GetButtonDown("A_Button")){
+				buttonObjects[0].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+			}
+			if(Input.GetButtonDown("B_Button")){
+				buttonObjects[1].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+			}
+			if(Input.GetButtonDown("X_Button")){
+				buttonObjects[2].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+			}
+			if(Input.GetButtonDown("Y_Button")){
+				buttonObjects[3].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+			}
+		}
 		rhythmTimer += Time.unscaledDeltaTime;
 		if (rhythmTimer > 0.5f) {
 			rhythmTimer -= 0.5f;

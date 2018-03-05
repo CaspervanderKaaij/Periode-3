@@ -52,9 +52,8 @@ public class BattleCharacter : MonoBehaviour {
 			}
 		}
 	}
-	void Animate(){
+	public void Animate(){
 		int r = Random.Range(1,6);
-		Debug.Log(r);
 		anim.Play("Attack");
 		anim.SetBool("attacking",true);
 		anim.SetFloat("attackNumber",r);

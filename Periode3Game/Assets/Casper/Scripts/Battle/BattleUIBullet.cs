@@ -23,6 +23,8 @@ public class BattleUIBullet : MonoBehaviour
     public bool startDone = false;
     public float destroyDistance = 0;
     private Vector3 destroyDistanceOrigin;
+    private BattleCharacter btlchr;
+    public AudioClip hitSFX;
     //private bool abxyCooldownNextFrame = false;
 
     void _Start()
@@ -49,6 +51,7 @@ public class BattleUIBullet : MonoBehaviour
         }
 
         manager = GameObject.FindObjectOfType<BattleManager>();
+        btlchr = manager.players[player].GetComponent<BattleCharacter>();
     }
 
     public void Normal()
@@ -77,7 +80,7 @@ public class BattleUIBullet : MonoBehaviour
                     if (manager.abxyCooldown[player] == 0)
                     {
                         buttonDown = true;
-                        manager.buttonObjects[player].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+                        //manager.buttonObjects[player].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
                     }
                 }
             }
@@ -130,6 +133,8 @@ public class BattleUIBullet : MonoBehaviour
 
     public virtual void Hit()
     {
+        btlchr.Animate();
+        manager.PlaySound(hitSFX,1,0.5f,manager.players[player].transform.position);
         bufferButton = 0;
         manager.DoDamage(manager.enemies[0].gameObject, 100, Random.Range(0.85f, 1.15f), false);
         manager.charge[player] += 15 * Random.Range(0.85f, 1.15f);
