@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
 	public GameObject blankAudioObject;
 	public GameObject damageUI;
 	public GameObject[] camPathPrefabs;
+	private int lastCamPath = -1;
 	public BattleHealth[] enemyHealthUI;
 	private GameObject camSlowMotionEffect;
 	public GameObject[] selectAtackUI;
@@ -120,8 +121,16 @@ public class BattleManager : MonoBehaviour
 
 	public void SpawnRandomCam ()
 	{
+		//Debug.Log("spawn");
 		int i = Random.Range (0, camPathPrefabs.Count ());
+		if(i == lastCamPath){
+			i += 1;
+		}
+		if(i > camPathPrefabs.Count ()){
+			i = 0;
+		}
 		GameObject.Instantiate (camPathPrefabs [i], Vector3.zero, Quaternion.identity);
+		lastCamPath = i;
 	}
 
 	public void Vibrate (float time, float strength)
