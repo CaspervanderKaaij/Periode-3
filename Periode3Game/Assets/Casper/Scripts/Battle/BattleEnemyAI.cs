@@ -19,6 +19,13 @@ public class BattleEnemyAI : MonoBehaviour {
 	//[HideInInspector]
 	public List<int> agroList;
 	private bool agroActivate;
+	private Animator anim;
+	public GameObject thinkParticle;
+	[HideInInspector]
+	public float damageMultipier = 1;
+	public float normalDamageMult = 1;
+	public float ThinkDamageMult = 5f;
+	public float ToppleDamageMult = 2;
 
 	public enum State{
 		Normal,
@@ -30,6 +37,7 @@ public class BattleEnemyAI : MonoBehaviour {
 	public State curState;
 
 	void Start () {
+		anim = transform.GetChild(0).GetComponent<Animator>();
 		agroActivate = false;
 		agroList.Clear();
 		manager = GameObject.FindObjectOfType<BattleManager> ();
@@ -42,15 +50,19 @@ public class BattleEnemyAI : MonoBehaviour {
 		switch (curState) {
 		case State.Attack :
 			Attack();
+			anim.SetInteger("state",1);
 			break;
 		case State.Normal:
 			Normal ();
+			anim.SetInteger("state",0);
 			break;
 		case State.Topple:
 			Topple ();
+			anim.SetInteger("state",2);
 			break;
 		case State.Think:
 			Think ();
+			anim.SetInteger("state",0);
 			break;
 			
 		}
@@ -58,7 +70,8 @@ public class BattleEnemyAI : MonoBehaviour {
 
 
 	void Attack(){
-
+		thinkParticle.SetActive(false);
+		anim.speed = 1;
 		agroList.Clear ();
 		manager.curState = BattleManager.State.EnemyAttack;//enemyAttack
 		cam.SetActive (true);
@@ -82,7 +95,9 @@ public class BattleEnemyAI : MonoBehaviour {
 	}
 
 	void Normal(){
-
+		damageMultipier = normalDamageMult;
+		anim.speed = 1;
+		thinkParticle.SetActive(false);
 		if (manager.curState == BattleManager.State.Normal) {//normal
 			timer += Time.deltaTime;
 		} else {
@@ -100,7 +115,9 @@ public class BattleEnemyAI : MonoBehaviour {
 	}
 
 	void Think(){
-
+		damageMultipier = ThinkDamageMult;
+		anim.speed = 0.1f;
+		thinkParticle.SetActive(true);
 		timer += Time.deltaTime;
 		if(manager.coolDownTimer != 0){
 			timer = 0;
@@ -114,7 +131,9 @@ public class BattleEnemyAI : MonoBehaviour {
 	}
 
 	void Topple(){
-
+		damageMultipier = ToppleDamageMult;
+		anim.speed = 1;
+		thinkParticle.SetActive(false);
 		agroList.Clear ();
 		if(boolHelper == false){
 			StartCoroutine (ToppleTimer(15));

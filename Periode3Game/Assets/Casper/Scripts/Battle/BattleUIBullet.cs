@@ -134,7 +134,8 @@ public class BattleUIBullet : MonoBehaviour
     public virtual void Hit()
     {
         btlchr.Animate();
-        manager.PlaySound(hitSFX,1,0.5f,manager.players[player].transform.position);
+        GameObject.FindObjectOfType<BattleCamera>().StartShake(0.1f,0.05f);
+        manager.PlaySound(hitSFX,1,0.5f,manager.players[player].transform.position,2f);
         bufferButton = 0;
         manager.DoDamage(manager.enemies[0].gameObject, 100, Random.Range(0.85f, 1.15f), false);
         manager.charge[player] += 15 * Random.Range(0.85f, 1.15f);

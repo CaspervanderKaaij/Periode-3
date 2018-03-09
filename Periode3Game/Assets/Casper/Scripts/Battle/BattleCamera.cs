@@ -14,11 +14,16 @@ public class BattleCamera : MonoBehaviour
 	public bool lookAtEnemy = true;
 	public Vector3 hardStartPos;
 	public Vector3 hardStartEuler;
+	private Vector3 center;
+	public float shakeStrength = 1;
+	private bool shaking = false;
 
 
 	void Start ()
 	{
 		transform.position = hardStartPos;
+		center = Camera.main.transform.position;
+		//speed = 0;//DELETE THIS
 		transform.eulerAngles = hardStartEuler;
 		for (int i = 0; i < transform.childCount; i++) {
 			pathOrder.Add (transform.GetChild (i));
@@ -48,5 +53,29 @@ public class BattleCamera : MonoBehaviour
 			manager.SpawnRandomCam ();
 			Destroy (gameObject);
 		}
+		//if(Input.GetKeyDown(KeyCode.S)){
+		//	StartShake(0.1f,0.2f);
+		//}
+		if(shaking == true){
+			CamShake();
+		}
+	}
+
+	void CamShake(){
+		Camera.main.transform.position = center + new Vector3(Random.Range(shakeStrength,-shakeStrength),Random.Range(shakeStrength,-shakeStrength),Random.Range(shakeStrength,-shakeStrength));
+	}
+
+	public void StartShake(float time,float strength){
+		shaking = true;
+		StopCoroutine(StopShake(time));
+		shakeStrength = strength;
+		center = Camera.main.transform.position;
+		StartCoroutine(StopShake(time));
+	}
+
+	IEnumerator StopShake(float time){
+		yield return new WaitForSeconds(time);
+		shaking = false;
+		Camera.main.transform.position = center;
 	}
 }

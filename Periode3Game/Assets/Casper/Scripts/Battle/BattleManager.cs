@@ -37,6 +37,8 @@ public class BattleManager : MonoBehaviour
 	public bool rhythmTime = false;
 	private Coroutine vib;
 	public bool turnAtack = false;
+	public AudioClip chargeSFX;
+	public AudioClip pressSFX;
 	//[HideInInspector]
 	//public string state = "normal";
 	public enum State
@@ -101,9 +103,9 @@ public class BattleManager : MonoBehaviour
 	public void DoDamage (GameObject sandBag, float damage, float random, bool topple)
 	{
 		GameObject uidmg = GameObject.Instantiate (damageUI, sandBag.transform.position, Quaternion.identity);
-		uidmg.GetComponent<TextMesh> ().text = "" + Mathf.RoundToInt (damage * random);
+		uidmg.GetComponent<TextMesh> ().text = "" + Mathf.RoundToInt (damage * random * enemies[0].GetComponent<BattleEnemyAI>().damageMultipier);
 		if (sandBag.tag == "Enemy") {
-			enemyHealth [0] -= Mathf.RoundToInt (damage * random);
+			enemyHealth [0] -= Mathf.RoundToInt (damage * random * enemies[0].GetComponent<BattleEnemyAI>().damageMultipier);
 			if (topple == true) {
 				BattleEnemyAI ai = sandBag.GetComponent<BattleEnemyAI> ();
 				if (ai.curState == BattleEnemyAI.State.Think) {//think
@@ -122,11 +124,11 @@ public class BattleManager : MonoBehaviour
 	public void SpawnRandomCam ()
 	{
 		//Debug.Log("spawn");
-		int i = Random.Range (0, camPathPrefabs.Count ());
+		int i = Random.Range (0, camPathPrefabs.Count () - 1);
 		if(i == lastCamPath){
 			i += 1;
 		}
-		if(i > camPathPrefabs.Count ()){
+		if(i > camPathPrefabs.Count () - 1){
 			i = 0;
 		}
 		GameObject.Instantiate (camPathPrefabs [i], Vector3.zero, Quaternion.identity);
@@ -150,12 +152,13 @@ public class BattleManager : MonoBehaviour
 		GamePad.SetVibration (0, 0, 0);
 	}
 
-	public void PlaySound (AudioClip clip, float volume, float spatialBlend, Vector3 pos)
+	public void PlaySound (AudioClip clip, float volume, float spatialBlend, Vector3 pos,float pitch)
 	{
 		GameObject p;
 		p = Instantiate (blankAudioObject);
 		p.transform.position = pos;
 		AudioSource pAudio = p.GetComponent<AudioSource> ();
+		pAudio.pitch = pitch;
 		pAudio.clip = clip;
 		pAudio.volume = volume;
 		pAudio.Play ();
@@ -168,15 +171,19 @@ public class BattleManager : MonoBehaviour
 		if(curState == State.Normal){
 			if(Input.GetButtonDown("A_Button")){
 				buttonObjects[0].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+				PlaySound(pressSFX,0.35f,0,transform.position,0.7f);
 			}
 			if(Input.GetButtonDown("B_Button")){
 				buttonObjects[1].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+				PlaySound(pressSFX,0.35f,0,transform.position,0.9f);
 			}
 			if(Input.GetButtonDown("X_Button")){
 				buttonObjects[2].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+				PlaySound(pressSFX,0.35f,0,transform.position,1.1f);
 			}
 			if(Input.GetButtonDown("Y_Button")){
 				buttonObjects[3].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+				PlaySound(pressSFX,0.35f,0,transform.position,1.3f);
 			}
 		}
 		rhythmTimer += Time.unscaledDeltaTime;
@@ -331,6 +338,7 @@ public class BattleManager : MonoBehaviour
 	void TurnAtack ()
 	{
 		if (Time.timeScale != 0) {
+			PlaySound(chargeSFX,1,0,transform.position,1);
 			fadeIn.color = fadeColor;
 		}
 		timeScale = 0;
