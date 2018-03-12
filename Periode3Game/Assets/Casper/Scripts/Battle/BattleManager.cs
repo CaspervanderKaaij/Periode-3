@@ -338,7 +338,7 @@ public class BattleManager : MonoBehaviour
 	void TurnAtack ()
 	{
 		if (Time.timeScale != 0) {
-			PlaySound(chargeSFX,1,0,transform.position,1);
+			PlaySound(chargeSFX,0.5f,0,transform.position,1);
 			fadeIn.color = fadeColor;
 		}
 		timeScale = 0;

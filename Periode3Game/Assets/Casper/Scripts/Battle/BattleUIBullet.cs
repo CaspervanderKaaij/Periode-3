@@ -23,7 +23,8 @@ public class BattleUIBullet : MonoBehaviour
     public bool startDone = false;
     public float destroyDistance = 0;
     private Vector3 destroyDistanceOrigin;
-    private BattleCharacter btlchr;
+    [HideInInspector]
+    public BattleCharacter btlchr;
     public AudioClip hitSFX;
     //private bool abxyCooldownNextFrame = false;
 

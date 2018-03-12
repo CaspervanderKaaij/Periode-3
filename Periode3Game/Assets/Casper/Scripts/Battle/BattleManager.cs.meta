@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 guid: 74713dd57aeab984a9db68d3fd254f2b
-timeCreated: 1518704211
+timeCreated: 1520778460
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blankAudioObject: {fileID: 1136085088798062, guid: abf8545bb587b274b9a559d4d65bd243,
+      type: 2}
+  - damageUI: {fileID: 1165703717101358, guid: 978b9b320d9a14f4b965cd3fc52792e0, type: 2}
+  - atackNameUI: {instanceID: 0}
+  - victory: {instanceID: 0}
+  - chargeSFX: {fileID: 8300000, guid: 9b43bc3a38643eb4993fd34cc2c02367, type: 3}
+  - pressSFX: {fileID: 8300000, guid: 16904fa3630397d47b99c03bfd4c975d, type: 3}
+  - fadeIn: {instanceID: 0}
   executionOrder: 100
   icon: {instanceID: 0}
   userData: 

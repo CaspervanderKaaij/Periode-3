@@ -18,6 +18,9 @@ public class BattleEnemyAI : MonoBehaviour {
 	public int agro = 0;
 	//[HideInInspector]
 	public List<int> agroList;
+	public AudioClip moanSFX;
+	public AudioClip hitSFX;
+	//public AudioClip chargeSFX;
 	private bool agroActivate;
 	private Animator anim;
 	public GameObject thinkParticle;
@@ -72,6 +75,10 @@ public class BattleEnemyAI : MonoBehaviour {
 	void Attack(){
 		thinkParticle.SetActive(false);
 		anim.speed = 1;
+		if(cam.activeSelf == false){
+		manager.PlaySound(moanSFX,1,0.75f,transform.position,1);
+		manager.PlaySound(manager.chargeSFX,0.5f,0,transform.position,1);
+		}
 		agroList.Clear ();
 		manager.curState = BattleManager.State.EnemyAttack;//enemyAttack
 		cam.SetActive (true);
@@ -117,6 +124,12 @@ public class BattleEnemyAI : MonoBehaviour {
 	void Think(){
 		damageMultipier = ThinkDamageMult;
 		anim.speed = 0.1f;
+		GameObject.FindObjectOfType<BattleCamera>().StartShake(Time.deltaTime,0.05f);
+		if(thinkParticle.activeSelf == false){
+			thinkParticle.GetComponent<AudioSource>().pitch = 0f;
+		} else {
+			thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
+		}
 		thinkParticle.SetActive(true);
 		timer += Time.deltaTime;
 		if(manager.coolDownTimer != 0){
@@ -133,6 +146,10 @@ public class BattleEnemyAI : MonoBehaviour {
 	void Topple(){
 		damageMultipier = ToppleDamageMult;
 		anim.speed = 1;
+		if(thinkParticle.activeSelf == true){
+			manager.PlaySound(moanSFX,1,0.75f,transform.position,1.7f);
+			manager.PlaySound(hitSFX,0.5f,0.75f,transform.position,1);
+		}
 		thinkParticle.SetActive(false);
 		agroList.Clear ();
 		if(boolHelper == false){
@@ -164,6 +181,8 @@ public class BattleEnemyAI : MonoBehaviour {
 	}
 	private IEnumerator ToppleTimer(float time){
 		yield return new WaitForSeconds (time);
+		manager.PlaySound(hitSFX,0.5f,0.75f,transform.position,1);
+		manager.PlaySound(moanSFX,0.5f,0.75f,transform.position,1);
 		curState = State.Normal;
 		boolHelper = false;
 	}

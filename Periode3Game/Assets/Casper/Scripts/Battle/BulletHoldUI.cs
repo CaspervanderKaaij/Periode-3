@@ -15,12 +15,12 @@ private float timer = 0;
 	}
 
 	public override void Hit(){
-        Debug.Log("ass");
 		bufferButton = 0;
         timer += Time.deltaTime;
         if(timer > 0.3f){
             timer -= 0.3f;
             manager.DoDamage(manager.enemies[0].gameObject, 100, Random.Range(0.85f, 1.15f), false);
+            btlchr.Animate();
             GameObject g = GameObject.Instantiate(effect, manager.buttonObjects[player].transform);
             g.transform.position = g.transform.parent.position;
             g.transform.SetParent(GameObject.FindGameObjectWithTag("UIBulletEffect").transform);
@@ -28,7 +28,7 @@ private float timer = 0;
         manager.charge[player] += 4.5f * Random.Range(0.85f, 1.15f) * Time.deltaTime;
         Vector3 scale = manager.buttonObjects[player].transform.localScale;
         manager.abxyCooldown[player] = 0;
-        manager.Vibrate(0.1f, 0.45f);
+        manager.Vibrate(0.1f, 0.25f);
         if(Input.GetButton(buttonName) == true){
             holding = true;
         } else {

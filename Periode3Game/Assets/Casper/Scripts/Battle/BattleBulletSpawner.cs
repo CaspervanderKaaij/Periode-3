@@ -24,7 +24,7 @@ public class BattleBulletSpawner : MonoBehaviour
 		}
 	}
 		if (child.childCount != 0) {
-			if (Vector3.Distance (GameObject.FindGameObjectWithTag ("BulletHit").transform.position, child.GetChild (child.childCount - 1).transform.position) < 10) {
+			if (Vector3.Distance (GameObject.FindGameObjectWithTag ("BulletHit").transform.position, child.GetChild (child.childCount - 1).transform.position) < 160) {
 				ActualCode ();
 			}
 		} else {
