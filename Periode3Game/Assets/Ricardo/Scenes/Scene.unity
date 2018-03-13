@@ -502,8 +502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivot: {fileID: 2093715844}
   player: {fileID: 1567965437}
-  speed: 100
-  distance: 10
+  speed: 200
+  distance: 5
 --- !u!1 &162516318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 724926787}
   - component: {fileID: 724926786}
   - component: {fileID: 724926789}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TextActivator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,12 +1462,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   on: 1
   txt:
-  - Hentai
-  - loli
+  - Hello there good sir.
+  - 'Are you perhaps interested in:'
   - 24
-  - Heb jij wallpaper engine?
-  - Je kent het wel toch?
-  - Toen veloor ik waar jullie waren
+  - What?
+  - You are not even interested?
+  - Well fuck me sideways!
 --- !u!1 &756543067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094843126}
   - component: {fileID: 1094843125}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
