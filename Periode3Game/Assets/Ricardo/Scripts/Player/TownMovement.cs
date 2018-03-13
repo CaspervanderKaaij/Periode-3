@@ -7,6 +7,7 @@ public class TownMovement : MonoBehaviour {
 private CharacterController cc;
 public float speed = 5;
 private TownTextBuble buble;
+private Animator anim;
 
 public enum State
 {
@@ -18,12 +19,14 @@ public State curState = State.Normal;
 	void Start () {
 		cc = transform.GetComponent<CharacterController>();
 		buble = GameObject.FindObjectOfType<TownTextBuble>();
+		anim = transform.GetChild(0).GetComponent<Animator>();
 	}
 	
 	void Update () {
 		if(curState == State.Normal){
 			Move();
 		} else {
+			anim.SetFloat("anal",0);
 			buble.visible = false;
 		}
 	}
@@ -35,6 +38,7 @@ public State curState = State.Normal;
 			transform.eulerAngles = new Vector3(transform.eulerAngles.x,angle,transform.eulerAngles.z);
 		}
 		cc.Move(transform.TransformDirection(0,-9.81f * Time.deltaTime,speed * Mathf.Min(Vector2.SqrMagnitude(horVert),1) * Time.deltaTime));
+		anim.SetFloat("anal",Mathf.Min(Vector2.SqrMagnitude(horVert),1));
 	}
 
 	void OnTriggerStay(Collider other) {
