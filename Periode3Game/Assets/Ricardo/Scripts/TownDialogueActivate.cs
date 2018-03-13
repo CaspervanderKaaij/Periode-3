@@ -8,6 +8,8 @@ private TownManager manager;
 [HideInInspector]
 public bool on = true;
 public string[] txt;
+public string[] talker;
+public bool yesNo = false;
 	void Start () {
 		manager = GameObject.FindObjectOfType<TownManager>();
 	}
@@ -23,6 +25,9 @@ public string[] txt;
 					manager.dialogue.SetActive(true);
 					manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().text.Clear();
 					manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().text.AddRange(txt);
+					manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().talker.Clear();
+					manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().talker.AddRange(talker);
+					manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().yesNo = yesNo;
 					manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().first = true;
 					on = false;
 				}
