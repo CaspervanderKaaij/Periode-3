@@ -27,7 +27,7 @@ public class TownDialogueActivate : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                if (Input.GetButtonDown("A_Button"))
+                if (Input.GetButtonDown("Confirm"))
                 {
                     manager.dialogue.SetActive(true);
                     manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().text.Clear();

@@ -20,7 +20,7 @@ public class TownYesNo : MonoBehaviour
     void Update()
     {
         SetLoc();
-        if (Input.GetButtonDown("A_Button"))
+        if (Input.GetButtonDown("Confirm"))
         {
             SelectYesNo();
         }
@@ -54,7 +54,7 @@ public class TownYesNo : MonoBehaviour
 
     void SelectYesNo()
     {
-        if (yes == false)
+        if (yes == true)
         {
             SetTownDialogue(yesDialogue);
         }
@@ -66,9 +66,13 @@ public class TownYesNo : MonoBehaviour
 
     void SetTownDialogue(TownDialogue twndia)
     {
-        transform.parent.gameObject.SetActive(false);
         toSet.text.AddRange(twndia.text);
         toSet.talker.AddRange(twndia.talker);
         toSet.yesNo = twndia.yesNo;
+        transform.parent.gameObject.SetActive(false);
+        if(twndia.yesDialogue != null){
+            yesDialogue = twndia.yesDialogue;
+            noDialogue = twndia.noDialogue;
+        }
     }
 }

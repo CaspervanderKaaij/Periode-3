@@ -20,6 +20,8 @@ public class TownDialogue : MonoBehaviour
     public bool yesNo = false;
     [HideInInspector]
     public bool first = true;
+    public TownDialogue yesDialogue;
+    public TownDialogue noDialogue;
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class TownDialogue : MonoBehaviour
     void Update()
     {
         GameObject.FindObjectOfType<TownMovement>().curState = TownMovement.State.Dialogue;
-        if (Input.GetButtonDown("A_Button"))
+        if (Input.GetButtonDown("Confirm"))
         {
             if (manager.yesNo.activeSelf == false)
             {
