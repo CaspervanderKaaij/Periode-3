@@ -44,21 +44,22 @@ public class MovementScript : MonoBehaviour {
         z = Input.GetAxis("Horizontal");
         float angle = Mathf.Atan2(x, -z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y - 90;
         anim.SetFloat("anal",Vector2.SqrMagnitude(new Vector2(x,z)));
-        print(angle);
+       // print(angle);
         move.x = z;
         move.z = x;
 
         if (x != 0)
         {
-            gameObject.transform.position += cam.transform.forward * Time.deltaTime * speed;
+          //  gameObject.transform.position += transform.forward * Time.deltaTime * speed;
         }
         if (z != 0)
         {
-            gameObject.transform.position += cam.transform.forward * Time.deltaTime * speed;
+           // gameObject.transform.position += transform.forward * Time.deltaTime * speed;
         }
         if (Vector2.SqrMagnitude(new Vector2(x, z)) > 0)
         {
              transform.eulerAngles = new Vector3(transform.eulerAngles.x, angle, transform.eulerAngles.z);
+             gameObject.transform.position += transform.forward * Time.deltaTime * speed;
         }
    }
 
