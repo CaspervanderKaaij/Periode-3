@@ -47,8 +47,6 @@ public class MovementScript : MonoBehaviour {
         print(angle);
         move.x = z;
         move.z = x;
-        //make the player move relative to the cam
-        //use the forward of the cam + pos player
 
         if (x != 0)
         {
