@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
 
 	[Header ("Handy's & helpers")]
 	public bool vibration = true;
+	public Image startFade;
 	public float timeScale = 1;
 	private float rhythmTimer = 0;
 	public bool rhythmTime = false;
@@ -69,6 +70,7 @@ public class BattleManager : MonoBehaviour
 		abxyCooldown.Add (0);
 		abxyCooldown.Add (0);
 		abxyCooldown.Add (0);
+		startFade.color = Color.black;
 		fadeIn.color = Color.clear;
 		victory.SetActive (false);
 		atackingPlayer = 2;
@@ -166,9 +168,25 @@ public class BattleManager : MonoBehaviour
 		Destroy (p, clip.length);
 	}
 
-	void Update ()
-	{
-		if(curState == State.Normal){
+	public void CheckState(){
+		switch (curState) {
+		case State.Attack :
+			//Attack();
+			break;
+		case State.Normal:
+			//Normal ();
+			break;
+		case State.Cooldown:
+			//Topple ();
+			break;
+		case State.Victory:
+			//Think ();
+			break;
+			
+		}
+	}
+
+	void Normal(){
 			if(Input.GetButtonDown("A_Button")){
 				buttonObjects[0].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
 				PlaySound(pressSFX,0.35f,0,transform.position,0.7f);
@@ -185,6 +203,25 @@ public class BattleManager : MonoBehaviour
 				buttonObjects[3].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
 				PlaySound(pressSFX,0.35f,0,transform.position,1.3f);
 			}
+	}
+
+	void Attack(){
+		
+			if (atackNameUI.activeSelf == false) {
+				fadeIn.color = fadeColor;
+			}
+			atackNameUI.SetActive (true);
+		
+	}
+	void Update ()
+	{
+		startFade.color = Color.LerpUnclamped(startFade.color,Color.clear,Time.deltaTime * Mathf.Abs(5f - startFade.color.a));
+		//Debug.Log(startFade.color.a);
+		if(startFade.color.a < 0.2f){
+			//startFade.color = Color.clear;
+		}
+		if(curState == State.Normal){
+			Normal();
 		}
 		rhythmTimer += Time.unscaledDeltaTime;
 		if (rhythmTimer > 0.5f) {
@@ -294,13 +331,28 @@ public class BattleManager : MonoBehaviour
 			}
 		}
 		if (curState == State.EnemyAttack) {//enemyAttack
-			if (atackNameUI.activeSelf == false) {
-				fadeIn.color = fadeColor;
-			}
-			atackNameUI.SetActive (true);
+		Attack();
 		}
 
 		if (curState == State.Victory) {//Victory
+		Victory();
+		}
+
+		if (curState == State.Cooldown) {
+			Cooldown();
+		}
+
+		Time.timeScale = timeScale;
+	}
+
+	void Cooldown(){
+			coolDownTimer = Mathf.MoveTowards (coolDownTimer, 0, Time.deltaTime);
+			if (coolDownTimer == 0) {
+				curState = State.Normal;//normal
+			}
+	}
+	void Victory(){
+		
 			victory.SetActive (true);
 			for (int i = 0; i < GameObject.Find ("Canvas").transform.childCount; i++) {
 				if (GameObject.Find ("Canvas").transform.GetChild (i).name != "Victory") {
@@ -308,16 +360,7 @@ public class BattleManager : MonoBehaviour
 				}
 			}
 			curState = State.End;//fuck
-		}
-
-		if (curState == State.Cooldown) {//cooldown
-			coolDownTimer = Mathf.MoveTowards (coolDownTimer, 0, Time.deltaTime);
-			if (coolDownTimer == 0) {
-				curState = State.Normal;//normal
-			}
-		}
-
-		Time.timeScale = timeScale;
+		
 	}
 
 	public void BackToNormal (bool coolDown)

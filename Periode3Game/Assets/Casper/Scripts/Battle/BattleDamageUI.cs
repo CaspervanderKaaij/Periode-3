@@ -17,7 +17,7 @@ public class BattleDamageUI : MonoBehaviour {
 		randomizer = Random.Range (0.5f,2);
 	}
 
-	void Update () {
+	void LateUpdate () {
 		transform.eulerAngles = cam.eulerAngles;
 		float scaleHelp = Vector3.Distance (transform.position,cam.position) * (randomizer / 1.5f) / 170;
 		transform.localScale = new Vector3(scaleHelp,scaleHelp,scaleHelp);
@@ -31,6 +31,9 @@ public class BattleDamageUI : MonoBehaviour {
 		}
 		if(timer > 2.9f){
 			Destroy (gameObject);
+		}
+		if(transform.GetComponent<Renderer>().isVisible == false){
+			transform.position = cam.position + cam.forward * 20;
 		}
 	}
 }

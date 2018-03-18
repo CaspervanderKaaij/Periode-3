@@ -11,7 +11,6 @@ public class BattleCharacter : MonoBehaviour {
 	public float timer = 0;
 	private bool hasAtacked = false;
 	public Animator anim;
-	//public string state = "normal";
 
 	void Start () {
 		manager = GameObject.FindObjectOfType<BattleManager> ();
@@ -22,8 +21,8 @@ public class BattleCharacter : MonoBehaviour {
 	void Update () {
 		if (manager.curState == BattleManager.State.Attack) {//Attack
 			if (manager.atackingPlayer == playerNumber) {
-				cam.SetActive (true);
-				//Debug.Log ("Player" + playerNumber + " is using atack number: " + atackNumber);
+				//cam.SetActive (true);
+				GameObject.FindObjectOfType<BattleCamera>().SetExtaPos(cam.transform);
 
 				if(timer > 0.5f){
 					if(hasAtacked == false){
@@ -41,15 +40,13 @@ public class BattleCharacter : MonoBehaviour {
 				}
 				timer += Time.deltaTime;
 			} else {
-				cam.SetActive (false);
+				//cam.SetActive (false);
 				timer = 0;
 			}
 		} else {
-			cam.SetActive (false);
+			//cam.SetActive (false);
+			//GameObject.FindObjectOfType<BattleCamera>().SetExtaPos(cam.transform);
 			timer = 0;
-			if(Input.GetKeyDown(KeyCode.Space)){
-			//	Animate();
-			}
 		}
 	}
 	public void Animate(){
