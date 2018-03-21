@@ -30,6 +30,9 @@ public class BattleEnemyAI : MonoBehaviour
     public float normalDamageMult = 1;
     public float ThinkDamageMult = 5f;
     public float ToppleDamageMult = 2;
+    public float damage = 30;
+    public float impactTime = 0.5f;
+    public float attackLength = 2.5f;
 
     public enum State
     {
@@ -97,12 +100,18 @@ public class BattleEnemyAI : MonoBehaviour
             if (damageHelper == false)
             {
                 damageHelper = true;
-                manager.DoDamage(manager.players[agro], 10, Random.Range(0.9f, 1.1f), false);
+                manager.DoDamage(manager.players[agro], damage, Random.Range(0.9f, 1.1f), false);
             }
         }
-        if (timer > 2.5f)
+        if(timer > impactTime){
+            if(GameObject.FindObjectOfType<BattleCamera>().shaking == false){
+                manager.Vibrate(0.1f, 1);
+                GameObject.FindObjectOfType<BattleCamera>().StartShake(attackLength - impactTime,0.5f);
+            }
+        }
+        if (timer > attackLength)
         {
-            manager.Vibrate(0.1f, 1);
+          //  manager.Vibrate(0.1f, 1);
             //cam.SetActive (false);
             timer = 0;
             curState = State.Normal;
@@ -149,18 +158,22 @@ public class BattleEnemyAI : MonoBehaviour
         }
         else
         {
-            thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
+           // thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
         }
         thinkParticle.SetActive(true);
-        timer += Time.deltaTime;
-        if (manager.coolDownTimer != 0)
+       // timer += Time.deltaTime;
+       // thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
+        if (manager.curState != BattleManager.State.Cooldown)
         {
-            timer = 0;
+            //timer = 0;
+            timer += Time.deltaTime;
+            thinkParticle.GetComponent<AudioSource>().pitch += 5.5f / thinkTime * Time.deltaTime;
         }
         else if (manager.atackNameUI.activeSelf == true)
         {
-            timer = 0;
+           // timer = 0;
         }
+       // Debug.Log(timer);
         if (timer > thinkTime)
         {
 			bool can = true;
@@ -171,6 +184,7 @@ public class BattleEnemyAI : MonoBehaviour
 				can = false;
 			}
 			if(can == true){
+                timer = 0;
             	curState = State.Attack;
 			}
         }

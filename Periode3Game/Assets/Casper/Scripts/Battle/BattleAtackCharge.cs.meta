@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: f83896dbc672cf34083bf5024960f88a
-timeCreated: 1517941273
+timeCreated: 1521460503
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dPad: {instanceID: 0}
+  - chargeSFX: {fileID: 8300000, guid: 9b43bc3a38643eb4993fd34cc2c02367, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

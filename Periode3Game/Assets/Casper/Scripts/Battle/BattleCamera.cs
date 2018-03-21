@@ -16,7 +16,8 @@ public class BattleCamera : MonoBehaviour
     public Vector3 hardStartEuler;
     private Vector3 center;
     public float shakeStrength = 1;
-    private bool shaking = false;
+    [HideInInspector]
+    public bool shaking = false;
     private float speedSave;
     private bool attackState = false;
     public GameObject posHelp;
@@ -68,7 +69,10 @@ public class BattleCamera : MonoBehaviour
                 manager.SpawnRandomCam();
                 Destroy(gameObject);
             }
-            if (shaking == true)
+            Camera.main.transform.position = posHelp.transform.position;
+            Camera.main.transform.eulerAngles = posHelp.transform.eulerAngles;
+        }
+        if (shaking == true)
             {
                 speed = 0;
                 CamShake();
@@ -78,9 +82,6 @@ public class BattleCamera : MonoBehaviour
                 speed = speedSave;
                 center = posHelp.transform.position;
             }
-            Camera.main.transform.position = posHelp.transform.position;
-            Camera.main.transform.eulerAngles = posHelp.transform.eulerAngles;
-        }
     }
 
     void CamShake()
@@ -92,9 +93,10 @@ public class BattleCamera : MonoBehaviour
     {
         if (attackState == false)
         {
-			if(posHelp != null){
-            	center = posHelp.transform.position;
-			}
+            if (posHelp != null)
+            {
+                center = posHelp.transform.position;
+            }
         }
         shaking = true;
         StopCoroutine(StopShake(time));
@@ -113,7 +115,15 @@ public class BattleCamera : MonoBehaviour
     {
         StopCoroutine(CamBack());
         attackState = true;
-        Camera.main.transform.position = newPos.position;
+        if (shaking == false)
+        {
+            Camera.main.transform.position = newPos.position;
+        }
+        else
+        {
+            Camera.main.transform.position = newPos.position;
+            Camera.main.transform.position += new Vector3(Random.Range(shakeStrength, -shakeStrength), Random.Range(shakeStrength, -shakeStrength), Random.Range(shakeStrength, -shakeStrength));
+        }
         Camera.main.transform.eulerAngles = newPos.eulerAngles;
         StartCoroutine(CamBack());
     }
@@ -122,6 +132,6 @@ public class BattleCamera : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         attackState = false;
-        Camera.main.transform.position = center;
+        Camera.main.transform.position = posHelp.transform.position;
     }
 }
