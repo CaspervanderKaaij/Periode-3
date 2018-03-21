@@ -15,7 +15,6 @@ public class BattleEnemyAI : MonoBehaviour
     public string atackName = "Starlight Kick";
     public GameObject cam;
     private bool boolHelper = false;
-    private bool damageHelper = false;
     public int agro = 0;
     //[HideInInspector]
     public List<int> agroList;
@@ -95,18 +94,11 @@ public class BattleEnemyAI : MonoBehaviour
 	   	GameObject.FindObjectOfType<BattleCamera>().SetExtaPos(cam.transform);
         manager.atackNameUI.transform.GetChild(1).GetComponent<Text>().text = atackName;
         timer += Time.deltaTime;
-        if (timer > 1)
-        {
-            if (damageHelper == false)
-            {
-                damageHelper = true;
-                manager.DoDamage(manager.players[agro], damage, Random.Range(0.9f, 1.1f), false);
-            }
-        }
         if(timer > impactTime){
             if(GameObject.FindObjectOfType<BattleCamera>().shaking == false){
                 manager.Vibrate(0.1f, 1);
                 GameObject.FindObjectOfType<BattleCamera>().StartShake(attackLength - impactTime,0.5f);
+                 manager.DoDamage(manager.players[agro], damage, Random.Range(0.9f, 1.1f), false);
             }
         }
         if (timer > attackLength)
@@ -115,7 +107,6 @@ public class BattleEnemyAI : MonoBehaviour
             //cam.SetActive (false);
             timer = 0;
             curState = State.Normal;
-            damageHelper = false;
             manager.BackToNormal(true);
         }
 
@@ -232,9 +223,10 @@ public class BattleEnemyAI : MonoBehaviour
     void Update()
     {
         if(manager.playerHealth[agro] <= 0){
-            for(int i = 0; i > 3; i++){
-                if(manager.playerHealth[i] > 0){
+            for(int i = 0; i < 4; i++){
+                if(manager.playerHealth[i] != 0){
                     agro = i;
+                    i = 3;
                 }
             }
             StopCoroutine(AgroTimer());
@@ -244,6 +236,7 @@ public class BattleEnemyAI : MonoBehaviour
         CheckState();
         Vector3 agroPos = manager.players[agro].transform.position;
         transform.LookAt(new Vector3(agroPos.x, transform.position.y, agroPos.z));
+        transform.eulerAngles += new Vector3(0,180,0);
     }
     private IEnumerator ToppleTimer(float time)
     {

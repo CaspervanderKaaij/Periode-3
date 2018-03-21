@@ -49,7 +49,7 @@ public class BattleCamera : MonoBehaviour
                 posHelp.transform.position = Vector3.MoveTowards(posHelp.transform.position, pathOrder[curPathPoint].position, Time.unscaledDeltaTime * speed);
                 if (lookAtEnemy == false)
                 {
-                    cam.eulerAngles = Vector3.Lerp(cam.eulerAngles, pathOrder[curPathPoint - 1].eulerAngles, Time.unscaledDeltaTime * 2);
+                    cam.eulerAngles = Vector3.Lerp(cam.eulerAngles, pathOrder[curPathPoint].eulerAngles, Time.unscaledDeltaTime * 2);
                 }
                 else
                 {

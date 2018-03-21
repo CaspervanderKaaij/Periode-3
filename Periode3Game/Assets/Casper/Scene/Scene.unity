@@ -3037,7 +3037,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323460526}
   m_LocalRotation: {x: -0.70710635, y: -0, z: -0.00000004470348, w: 0.70710725}
-  m_LocalPosition: {x: 0.004, y: -0.234, z: 0.26}
+  m_LocalPosition: {x: 0.004, y: 0.4, z: 0.26}
   m_LocalScale: {x: 2.3937778, y: 2.3937774, z: 2.3937774}
   m_Children: []
   m_Father: {fileID: 1114446459}
@@ -3078,13 +3078,13 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 4
+  m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 2
+  m_LengthScale: 6.18
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_RenderAlignment: 1
@@ -3156,7 +3156,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 640633559
+  randomSeed: 1233593275
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3204,7 +3204,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -3
+      scalar: -5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3308,7 +3308,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3552,7 +3552,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 45
+    maxNumParticles: 450
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -3599,7 +3599,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 2
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -3716,7 +3716,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 90
+      scalar: 900
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3811,17 +3811,17 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
         - serializedVersion: 2
           time: 1
           value: 1
-          inSlope: 1
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -6372,7 +6372,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b77572acd0808224cad77a60eacd19d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.708
+  m_Volume: 0.375
   m_Pitch: 0.89
   Loop: 1
   Mute: 0
@@ -7064,7 +7064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 100
+  health: 1
 --- !u!1 &388421784
 GameObject:
   m_ObjectHideFlags: 0
@@ -8427,7 +8427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 100
+  health: 1
 --- !u!1 &522355075
 GameObject:
   m_ObjectHideFlags: 0
@@ -9579,7 +9579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 100
+  health: 1
 --- !u!1 &667670282
 GameObject:
   m_ObjectHideFlags: 0
@@ -11020,19 +11020,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.030470582
+      value: -0.024903396
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9876454
+      value: -0.99451154
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.078088105
+      value: 0.08003766
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.13240245
+      value: -0.06261618
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_RootOrder
@@ -11076,7 +11076,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 164.917
+      value: 172.98201
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7dd7630946ad73e4080cb54984dd3246, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -17119,8 +17119,8 @@ MonoBehaviour:
   cam: {fileID: 2043807994}
   agro: 0
   agroList: 
-  moanSFX: {fileID: 8300000, guid: 1be5ab46a1ee29e4a9ce5bf48e16da03, type: 3}
-  hitSFX: {fileID: 8300000, guid: 1c1e41d7ea9106d4ab2a7f135e1f24ce, type: 3}
+  moanSFX: {fileID: 8300000, guid: 05416b573cb259d4892c9b1aceda9f66, type: 3}
+  hitSFX: {fileID: 8300000, guid: 9b43bc3a38643eb4993fd34cc2c02367, type: 3}
   thinkParticle: {fileID: 323460526}
   damageMultipier: 1
   normalDamageMult: 0
@@ -17128,6 +17128,7 @@ MonoBehaviour:
   ToppleDamageMult: 5
   damage: 50
   impactTime: 0.5
+  attackLength: 1.64
   curState: 0
 --- !u!1 &1124631056
 GameObject:
@@ -21145,7 +21146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  health: 100
+  health: 1
 --- !u!1 &1582480663
 GameObject:
   m_ObjectHideFlags: 0
