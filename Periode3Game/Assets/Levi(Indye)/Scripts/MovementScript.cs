@@ -18,17 +18,37 @@ public class MovementScript : MonoBehaviour {
     public GameObject button1;
     public GameObject button2;
     private Animator anim;
+    private Rigidbody rb;
+    private float yVel = -9.81f;
+    public float gravity;
+    private bool canJump;
     // Use this for initialization
     void Start () {
         anim = transform.GetChild(0).GetComponent<Animator>();
-	}
+        rb = gameObject.GetComponent<Rigidbody>();
+}
 	
 	// Update is called once per frame
 	void Update () {
         Mousebehaviour();
         Walking();
-        Sprint();
-        
+        Sprint();     
+        yVel = Mathf.MoveTowards(yVel, -9.81f, Time.deltaTime * gravity);
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (canJump == true)
+            {
+                yVel = 10;
+                canJump = false;
+            }
+
+        }
+        if (GetComponent<BoxCollider>().isTrigger == true)
+        {
+            canJump = true;
+        }
+        rb.velocity = new Vector3(x, yVel, z);
         if (transform.position.y <= -20)
         {
             transform.Translate(move * Time.deltaTime * speed);
@@ -74,7 +94,6 @@ public class MovementScript : MonoBehaviour {
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            player.SetActive(false);
         }
     }
 
@@ -97,7 +116,10 @@ public class MovementScript : MonoBehaviour {
             speed /= 2f;
         }
     }
-
+    public void OnTriggerStay(Collider other)
+    {
+        canJump = true;
+    }
 }
     
 

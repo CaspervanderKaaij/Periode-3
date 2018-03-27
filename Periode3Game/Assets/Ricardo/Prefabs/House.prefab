@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65922869730411624}
   - component: {fileID: 65441387952838678}
   m_Layer: 0
-  m_Name: House_3_overpass
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
