@@ -88,6 +88,10 @@ public class BattleAtackSelecter : MonoBehaviour
                     manager.timeScale = 1;
                     manager.charge[manager.atackingPlayer - 1] = 0;
                 }
+            } else if(Input.GetButtonDown("Cancel")){
+                manager.timeScale = 1;
+                manager.BackToNormal(true);
+               //manager.curState = BattleManager.State.Attack;
             }
         }
     }

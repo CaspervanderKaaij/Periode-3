@@ -40,6 +40,7 @@ public class BattleManager : MonoBehaviour
     public bool turnAtack = false;
     public AudioClip chargeSFX;
     public AudioClip pressSFX;
+    public GameObject[] victoryOut;
     //[HideInInspector]
     //public string state = "normal";
     public enum State
@@ -209,23 +210,31 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetButtonDown("A_Button"))
         {
-            buttonObjects[0].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
-            PlaySound(pressSFX, 0.35f, 0, transform.position, 0.7f);
+            if(playerHealth[0] != 0){
+                buttonObjects[0].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+                PlaySound(pressSFX, 0.35f, 0, transform.position, 0.7f);
+            }
         }
         if (Input.GetButtonDown("B_Button"))
         {
-            buttonObjects[1].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
-            PlaySound(pressSFX, 0.35f, 0, transform.position, 0.9f);
+            if(playerHealth[1] != 0){
+                buttonObjects[1].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+                PlaySound(pressSFX, 0.35f, 0, transform.position, 0.9f);
+            }
         }
         if (Input.GetButtonDown("X_Button"))
         {
-            buttonObjects[2].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
-            PlaySound(pressSFX, 0.35f, 0, transform.position, 1.1f);
+            if(playerHealth[2] != 0){
+                buttonObjects[2].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+                PlaySound(pressSFX, 0.35f, 0, transform.position, 1.1f);
+            }
         }
         if (Input.GetButtonDown("Y_Button"))
         {
-            buttonObjects[3].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
-            PlaySound(pressSFX, 0.35f, 0, transform.position, 1.3f);
+            if(playerHealth[3] != 0){
+                buttonObjects[3].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
+                PlaySound(pressSFX, 0.35f, 0, transform.position, 1.3f);
+            }
         }
     }
 
@@ -241,7 +250,9 @@ public class BattleManager : MonoBehaviour
     }
     void Update()
     {
-
+        if(playerHealth[0] + playerHealth[1] + playerHealth[2] + playerHealth[3] == 0){
+            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+        }
         if (curState != State.EnemyAttack)
         {
             for (int i = 0; i < players.Count; i++)
@@ -440,15 +451,19 @@ public class BattleManager : MonoBehaviour
     }
     void Victory()
     {
-
+        if(victory != null){
         victory.SetActive(true);
-        //for (int i = 0; i < GameObject.Find ("Canvas").transform.childCount; i++) {
-        //if (GameObject.Find ("Canvas").transform.GetChild (i).name != "Victory") {
-        //Destroy (GameObject.Find ("Canvas").transform.GetChild (i).gameObject);
-        //}
-        //}
+        }
+       for(int i = 0; i < victoryOut.Length; i++){
+           //victoryOut[i].SetColor(Color.clear);
+          // if(victoryOut[i].GetComponent<Text>() != null){
+              if(victoryOut[i] != null){
+               victoryOut[i].SetActive(false);
+              }
+           //}
+       }
         Time.timeScale = 0;
-        curState = State.End;//fuck
+        //curState = State.End;//fuck
 
     }
 

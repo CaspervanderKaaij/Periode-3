@@ -861,8 +861,11 @@ MonoBehaviour:
   thinkParticle: {fileID: 1104611199533292}
   damageMultipier: 1
   normalDamageMult: 1
-  ThinkDamageMult: 5
+  ThinkDamageMult: 1
   ToppleDamageMult: 2
+  damage: 30
+  impactTime: 0.5
+  attackLength: 1
   curState: 0
 --- !u!137 &137878736862585138
 SkinnedMeshRenderer:

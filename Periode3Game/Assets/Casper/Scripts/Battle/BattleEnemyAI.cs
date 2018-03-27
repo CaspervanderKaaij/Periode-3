@@ -90,26 +90,27 @@ public class BattleEnemyAI : MonoBehaviour
         }
         agroList.Clear();
         manager.curState = BattleManager.State.EnemyAttack;//enemyAttack
-       // cam.SetActive(true);
-	   	GameObject.FindObjectOfType<BattleCamera>().SetExtaPos(cam.transform);
+                                                           // cam.SetActive(true);
+        GameObject.FindObjectOfType<BattleCamera>().SetExtaPos(cam.transform);
         manager.atackNameUI.transform.GetChild(1).GetComponent<Text>().text = atackName;
         timer += Time.deltaTime;
-        if(timer > impactTime){
-            if(GameObject.FindObjectOfType<BattleCamera>().shaking == false){
+        if (timer > impactTime)
+        {
+            if (GameObject.FindObjectOfType<BattleCamera>().shaking == false)
+            {
                 manager.Vibrate(0.1f, 1);
-                GameObject.FindObjectOfType<BattleCamera>().StartShake(attackLength - impactTime,0.5f);
-                 manager.DoDamage(manager.players[agro], damage, Random.Range(0.9f, 1.1f), false);
+                GameObject.FindObjectOfType<BattleCamera>().StartShake(attackLength - impactTime, 0.5f);
+                manager.DoDamage(manager.players[agro], damage, Random.Range(0.9f, 1.1f), false);
             }
         }
         if (timer > attackLength)
         {
-          //  manager.Vibrate(0.1f, 1);
+            //  manager.Vibrate(0.1f, 1);
             //cam.SetActive (false);
             timer = 0;
             curState = State.Normal;
             manager.BackToNormal(true);
         }
-
     }
 
     void Normal()
@@ -149,11 +150,11 @@ public class BattleEnemyAI : MonoBehaviour
         }
         else
         {
-           // thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
+            // thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
         }
         thinkParticle.SetActive(true);
-       // timer += Time.deltaTime;
-       // thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
+        // timer += Time.deltaTime;
+        // thinkParticle.GetComponent<AudioSource>().pitch += 1.5f * Time.deltaTime;
         if (manager.curState != BattleManager.State.Cooldown)
         {
             //timer = 0;
@@ -162,22 +163,29 @@ public class BattleEnemyAI : MonoBehaviour
         }
         else if (manager.atackNameUI.activeSelf == true)
         {
-           // timer = 0;
+            // timer = 0;
         }
-       // Debug.Log(timer);
+        // Debug.Log(timer);
         if (timer > thinkTime)
         {
-			bool can = true;
-			if(Input.GetButtonDown("DPadUpDown")){
-				can = false;
-			}
-			if(Input.GetButtonDown("DPadLeftRight")){
-				can = false;
-			}
-			if(can == true){
+            bool can = true;
+            if (Input.GetButtonDown("DPadUpDown"))
+            {
+                can = false;
+            }
+            if (Input.GetButtonDown("DPadLeftRight"))
+            {
+                can = false;
+            }
+            if (manager.curState != BattleManager.State.Normal)
+            {
+                can = false;
+            }
+            if (can == true)
+            {
                 timer = 0;
-            	curState = State.Attack;
-			}
+                curState = State.Attack;
+            }
         }
 
     }
@@ -222,9 +230,12 @@ public class BattleEnemyAI : MonoBehaviour
 
     void Update()
     {
-        if(manager.playerHealth[agro] <= 0){
-            for(int i = 0; i < 4; i++){
-                if(manager.playerHealth[i] != 0){
+        if (manager.playerHealth[agro] <= 0)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (manager.playerHealth[i] != 0)
+                {
                     agro = i;
                     i = 3;
                 }
@@ -236,14 +247,21 @@ public class BattleEnemyAI : MonoBehaviour
         CheckState();
         Vector3 agroPos = manager.players[agro].transform.position;
         transform.LookAt(new Vector3(agroPos.x, transform.position.y, agroPos.z));
-        transform.eulerAngles += new Vector3(0,180,0);
+        transform.eulerAngles += new Vector3(0, 180, 0);
     }
     private IEnumerator ToppleTimer(float time)
     {
         yield return new WaitForSeconds(time);
-        manager.PlaySound(hitSFX, 0.5f, 0.75f, transform.position, 1);
-        manager.PlaySound(moanSFX, 0.5f, 0.75f, transform.position, 1);
-        curState = State.Normal;
-        boolHelper = false;
+        if (manager.curState != BattleManager.State.Victory)
+        {
+            if (manager.curState != BattleManager.State.End)
+            {
+                manager.PlaySound(hitSFX, 0.5f, 0.75f, transform.position, 1);
+                manager.PlaySound(moanSFX, 0.5f, 0.75f, transform.position, 1);
+                curState = State.Normal;
+                boolHelper = false;
+                timer = 0;
+            }
+        }
     }
 }

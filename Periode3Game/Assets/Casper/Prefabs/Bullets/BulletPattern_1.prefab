@@ -610,6 +610,7 @@ MonoBehaviour:
   destroyDistance: 0
   btlchr: {fileID: 0}
   hitSFX: {fileID: 8300000, guid: 75252567a7e997d4c91200f23cdead90, type: 3}
+  damage: 100
 --- !u!114 &114663175250237306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -632,6 +633,7 @@ MonoBehaviour:
   destroyDistance: 0
   btlchr: {fileID: 0}
   hitSFX: {fileID: 8300000, guid: 75252567a7e997d4c91200f23cdead90, type: 3}
+  damage: 100
 --- !u!114 &114667594577784096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -654,6 +656,7 @@ MonoBehaviour:
   destroyDistance: 0
   btlchr: {fileID: 0}
   hitSFX: {fileID: 8300000, guid: 75252567a7e997d4c91200f23cdead90, type: 3}
+  damage: 100
 --- !u!114 &114676943366660964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -687,6 +690,7 @@ MonoBehaviour:
   destroyDistance: 0
   btlchr: {fileID: 0}
   hitSFX: {fileID: 8300000, guid: 75252567a7e997d4c91200f23cdead90, type: 3}
+  damage: 100
 --- !u!114 &114934637737480928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -709,3 +713,4 @@ MonoBehaviour:
   destroyDistance: 0
   btlchr: {fileID: 0}
   hitSFX: {fileID: 8300000, guid: 75252567a7e997d4c91200f23cdead90, type: 3}
+  damage: 100

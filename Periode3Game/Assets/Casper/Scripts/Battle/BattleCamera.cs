@@ -21,6 +21,7 @@ public class BattleCamera : MonoBehaviour
     private float speedSave;
     private bool attackState = false;
     public GameObject posHelp;
+    public Transform victoryPos;
 
 
     void Start()
@@ -38,10 +39,12 @@ public class BattleCamera : MonoBehaviour
         cam.eulerAngles = pathOrder[0].eulerAngles;
         speedSave = speed;
         center = posHelp.transform.position;
+        victoryPos = GameObject.FindWithTag("VictoryPos").transform;
     }
 
     void Update()
     {
+        if(manager.curState != BattleManager.State.Victory){
         if (attackState == false)
         {
             if (Vector3.Distance(posHelp.transform.position, pathOrder[curPathPoint].position) > 0.3f)
@@ -82,6 +85,10 @@ public class BattleCamera : MonoBehaviour
                 speed = speedSave;
                 center = posHelp.transform.position;
             }
+        } else {
+            SetExtaPos(victoryPos);
+            Destroy(gameObject);
+        }
     }
 
     void CamShake()

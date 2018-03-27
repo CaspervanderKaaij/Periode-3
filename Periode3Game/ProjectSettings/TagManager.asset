@@ -9,6 +9,7 @@ TagManager:
   - BulletMiss
   - Bullet
   - UIBulletEffect
+  - VictoryPos
   layers:
   - Default
   - TransparentFX

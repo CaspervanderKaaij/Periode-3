@@ -26,6 +26,7 @@ public class BattleUIBullet : MonoBehaviour
     [HideInInspector]
     public BattleCharacter btlchr;
     public AudioClip hitSFX;
+    public float damage = 100;
     //private bool abxyCooldownNextFrame = false;
 
     void _Start()
@@ -138,7 +139,7 @@ public class BattleUIBullet : MonoBehaviour
         GameObject.FindObjectOfType<BattleCamera>().StartShake(0.1f,0.05f);
         manager.PlaySound(hitSFX,1,0.5f,manager.players[player].transform.position,2f);
         bufferButton = 0;
-        manager.DoDamage(manager.enemies[0].gameObject, 100, Random.Range(0.85f, 1.15f), false);
+        manager.DoDamage(manager.enemies[0].gameObject, damage, Random.Range(0.85f, 1.15f), false);
         manager.charge[player] += 15 * Random.Range(0.85f, 1.15f);
         Vector3 scale = manager.buttonObjects[player].transform.localScale;
         manager.abxyCooldown[player] = 0;

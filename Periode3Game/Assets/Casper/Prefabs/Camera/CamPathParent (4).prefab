@@ -27,21 +27,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1511487964849896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4258648564528580}
-  m_Layer: 0
-  m_Name: GameObject (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1579166297188896
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,25 +64,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579166297188896}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 19, y: 7.75, z: 12.7}
+  m_LocalPosition: {x: 14.3, y: -1.39, z: 12.7}
   m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 4303635223062832}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
---- !u!4 &4258648564528580
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1511487964849896}
-  m_LocalRotation: {x: 0.045657456, y: -0.09593242, z: 0.07872371, w: 0.991219}
-  m_LocalPosition: {x: 23.27, y: -5.88, z: 2.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4303635223062832}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 173.937, y: 169.396, z: 188.519}
 --- !u!4 &4303635223062832
 Transform:
   m_ObjectHideFlags: 1
@@ -110,7 +82,6 @@ Transform:
   m_Children:
   - {fileID: 4539437410856966}
   - {fileID: 4092707449670244}
-  - {fileID: 4258648564528580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -140,8 +111,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathOrder: []
   curPathPoint: 0
-  speed: 5
+  speed: 1
   loop: 0
   lookAtEnemy: 1
   hardStartPos: {x: -20.71, y: 9.04, z: -4.99}
   hardStartEuler: {x: 0, y: 0, z: 0}
+  shakeStrength: 1
+  shaking: 0
+  posHelp: {fileID: 0}
+  victoryPos: {fileID: 0}
