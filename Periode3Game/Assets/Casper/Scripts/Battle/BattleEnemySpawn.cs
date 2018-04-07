@@ -10,6 +10,8 @@ public int curEnemy = 0;
 public Text UIEnemyName;
 
 	void Start () {
+		curEnemy = PlayerPrefs.GetInt("enemy");
+		Debug.Log(PlayerPrefs.GetInt("enemy"));
 		Instantiate(enemies[curEnemy],transform.position,Quaternion.identity);
 		UIEnemyName.text = enemies[curEnemy].name;
 	}

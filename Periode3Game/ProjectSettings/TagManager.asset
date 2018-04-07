@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - UIBulletEffect
   - VictoryPos
+  - Music
   layers:
   - Default
   - TransparentFX

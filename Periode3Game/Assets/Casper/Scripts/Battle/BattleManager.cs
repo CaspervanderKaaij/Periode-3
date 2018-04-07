@@ -42,6 +42,7 @@ public class BattleManager : MonoBehaviour
     public AudioClip chargeSFX;
     public AudioClip pressSFX;
     public GameObject[] victoryOut;
+    public AudioClip victoryMusic;
     //[HideInInspector]
     //public string state = "normal";
     public enum State
@@ -115,7 +116,7 @@ public class BattleManager : MonoBehaviour
         if (sandBag.tag == "Enemy")
         {
             enemyHealth[0] -= Mathf.RoundToInt(damage * random * enemies[0].GetComponent<BattleEnemyAI>().damageMultipier);
-            Instantiate(slashEffect,Camera.main.transform);
+            Instantiate(slashEffect, Camera.main.transform);
             if (topple == true)
             {
                 BattleEnemyAI ai = sandBag.GetComponent<BattleEnemyAI>();
@@ -212,28 +213,32 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetButtonDown("A_Button"))
         {
-            if(playerHealth[0] != 0){
+            if (playerHealth[0] != 0)
+            {
                 buttonObjects[0].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
                 PlaySound(pressSFX, 0.35f, 0, transform.position, 0.7f);
             }
         }
         if (Input.GetButtonDown("B_Button"))
         {
-            if(playerHealth[1] != 0){
+            if (playerHealth[1] != 0)
+            {
                 buttonObjects[1].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
                 PlaySound(pressSFX, 0.35f, 0, transform.position, 0.9f);
             }
         }
         if (Input.GetButtonDown("X_Button"))
         {
-            if(playerHealth[2] != 0){
+            if (playerHealth[2] != 0)
+            {
                 buttonObjects[2].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
                 PlaySound(pressSFX, 0.35f, 0, transform.position, 1.1f);
             }
         }
         if (Input.GetButtonDown("Y_Button"))
         {
-            if(playerHealth[3] != 0){
+            if (playerHealth[3] != 0)
+            {
                 buttonObjects[3].transform.localScale = new Vector3(1.25f, 1.25f, 1.3f);
                 PlaySound(pressSFX, 0.35f, 0, transform.position, 1.3f);
             }
@@ -252,7 +257,8 @@ public class BattleManager : MonoBehaviour
     }
     void Update()
     {
-        if(playerHealth[0] + playerHealth[1] + playerHealth[2] + playerHealth[3] == 0){
+        if (playerHealth[0] + playerHealth[1] + playerHealth[2] + playerHealth[3] == 0)
+        {
             SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
         }
         if (curState != State.EnemyAttack)
@@ -453,20 +459,37 @@ public class BattleManager : MonoBehaviour
     }
     void Victory()
     {
-        if(victory != null){
-        victory.SetActive(true);
+        if (victory.activeSelf == false)
+        {
+            if (victory != null)
+            {
+                victory.SetActive(true);
+            }
+            for (int i = 0; i < victoryOut.Length; i++)
+            {
+                //victoryOut[i].SetColor(Color.clear);
+                // if(victoryOut[i].GetComponent<Text>() != null){
+                if (victoryOut[i] != null)
+                {
+                    victoryOut[i].SetActive(false);
+                }
+                //}
+            }
+            Time.timeScale = 0;
+            AudioSource musicHelp = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+            //StartCoroutine(GameObject.FindGameObjectWithTag("Music").GetComponent<NoDestroyLoad>().DestroyTime(6));
+            musicHelp.clip = victoryMusic;
+            musicHelp.Stop();
+            musicHelp.Play();
+            StartCoroutine(Load());
+            //curState = State.End;//fuck
         }
-       for(int i = 0; i < victoryOut.Length; i++){
-           //victoryOut[i].SetColor(Color.clear);
-          // if(victoryOut[i].GetComponent<Text>() != null){
-              if(victoryOut[i] != null){
-               victoryOut[i].SetActive(false);
-              }
-           //}
-       }
-        Time.timeScale = 0;
-        //curState = State.End;//fuck
+    }
 
+    IEnumerator Load()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadScene("Overworld");
     }
 
     public void BackToNormal(bool coolDown)
