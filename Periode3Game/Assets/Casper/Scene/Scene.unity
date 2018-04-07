@@ -7944,7 +7944,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -283475008
+  randomSeed: -780626108
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13172,48 +13172,6 @@ MonoBehaviour:
   - Clench
   - Eradicate
   playerNumber: 0
---- !u!1001 &1078779668
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -53.563717
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.4602313
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 37.63245
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.9915525
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -0.12970635
-      objectReference: {fileID: 0}
-    - target: {fileID: 4600143221316442, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1079943076
 GameObject:
   m_ObjectHideFlags: 0
@@ -19570,6 +19528,8 @@ MonoBehaviour:
   playerHealth: 64000000640000006400000064000000
   enemyHealth: []
   vibration: 1
+  slashEffect: {fileID: 1127811283970222, guid: d32b169988e751248abfd0fb640bff5a,
+    type: 2}
   startFade: {fileID: 696187850}
   timeScale: 1
   rhythmTime: 0
@@ -20617,7 +20577,7 @@ MonoBehaviour:
   - {fileID: 1781906738869020, guid: 19979f20d3aaddc4b82dcee5f6ffe51e, type: 2}
   - {fileID: 1809695814031224, guid: b94dc0cd0c9778c47a02dfe65986dadb, type: 2}
   - {fileID: 1809695814031224, guid: a6c5e83984ab42e43afb1ab5dc1a3963, type: 2}
-  curEnemy: 1
+  curEnemy: 2
   UIEnemyName: {fileID: 158828944}
 --- !u!1 &1839228553
 GameObject:

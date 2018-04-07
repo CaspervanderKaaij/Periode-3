@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 71b661423a52fb14dbcdbcf75d9b412f
+timeCreated: 1522241806
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AR DESTINE
+  fontNames:
+  - AR DESTINE
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

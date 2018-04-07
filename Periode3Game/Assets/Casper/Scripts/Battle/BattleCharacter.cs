@@ -7,10 +7,10 @@ public class BattleCharacter : MonoBehaviour
 
     BattleManager manager;
     public int playerNumber = 0;
-	[HideInInspector]
+    [HideInInspector]
     public int atackNumber = 0;
     public GameObject cam;
-	[HideInInspector]
+    [HideInInspector]
     public float timer = 0;
     private bool hasAtacked = false;
     public Animator anim;
@@ -24,10 +24,10 @@ public class BattleCharacter : MonoBehaviour
 
     public AttackType[] atkType;
     public float[] damage;
-	[HideInInspector]
+    [HideInInspector]
     public int attackNumber = 0;
-	public int toppleNumber = 1;
-	public int highLevelNumber = 2;
+    public int toppleNumber = 1;
+    public int highLevelNumber = 2;
 
     void Start()
     {
@@ -40,11 +40,12 @@ public class BattleCharacter : MonoBehaviour
     {
         if (atkType[attackNumber] == AttackType.Damage)
         {
-			bool tplATK = false;
-			if(toppleNumber == attackNumber){
-				tplATK = true;
-			}
-
+            bool tplATK = false;
+            if (toppleNumber == attackNumber)
+            {
+                tplATK = true;
+            }
+            Animate();
             manager.DoDamage(manager.enemies[0], damage[attackNumber], Random.Range(0.9f, 1.05f), tplATK);
         }
 
@@ -52,7 +53,7 @@ public class BattleCharacter : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-				manager.playerHealth[i] += Mathf.RoundToInt(damage[attackNumber]);
+                manager.playerHealth[i] += Mathf.RoundToInt(damage[attackNumber]);
             }
         }
     }
@@ -89,6 +90,13 @@ public class BattleCharacter : MonoBehaviour
             {
                 //cam.SetActive (false);
                 timer = 0;
+            }
+        }
+        else if (manager.curState == BattleManager.State.PlayerAttack)
+        {
+            if (manager.atackingPlayer == playerNumber)
+            {
+                GameObject.FindObjectOfType<BattleCamera>().SetExtaPos(cam.transform);
             }
         }
         else

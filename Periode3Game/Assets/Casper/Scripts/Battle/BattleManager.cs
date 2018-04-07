@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
 
     [Header("Handy's & helpers")]
     public bool vibration = true;
+    public GameObject slashEffect;
     public Image startFade;
     public float timeScale = 1;
     private float rhythmTimer = 0;
@@ -114,6 +115,7 @@ public class BattleManager : MonoBehaviour
         if (sandBag.tag == "Enemy")
         {
             enemyHealth[0] -= Mathf.RoundToInt(damage * random * enemies[0].GetComponent<BattleEnemyAI>().damageMultipier);
+            Instantiate(slashEffect,Camera.main.transform);
             if (topple == true)
             {
                 BattleEnemyAI ai = sandBag.GetComponent<BattleEnemyAI>();
