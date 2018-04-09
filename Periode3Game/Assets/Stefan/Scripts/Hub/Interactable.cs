@@ -26,7 +26,7 @@ public class Interactable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-		if(Vector3.Distance(gameObject.transform.position,t.transform.position) < 0.53)
+		if(Vector3.Distance(gameObject.transform.position,t.transform.position) < 0.83)
         {
             txt.text = "Press [E]";
             a = true;
@@ -35,7 +35,7 @@ public class Interactable : MonoBehaviour {
         }
         else
         {
-            if (Vector3.Distance(gameObject.transform.position, t.transform.position) > 0.53)
+            if (Vector3.Distance(gameObject.transform.position, t.transform.position) > 0.83)
             {
                 txt.text = "";
                 a = false;
