@@ -16,13 +16,13 @@ public class Camer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.LookAt(t.transform);
-        if(t.transform.position.z < 4.5)
+        if(t.transform.position.z < -0.63)
         {
             c.enabled = true;
             c2.enabled = false;
         } else
         {
-            if(t.transform.position.z > 4.5)
+            if(t.transform.position.z > -0.63)
             {
                 c.enabled = false;
                 c2.enabled = true;

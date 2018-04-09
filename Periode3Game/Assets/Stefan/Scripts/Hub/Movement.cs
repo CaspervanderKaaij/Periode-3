@@ -21,13 +21,13 @@ public class Movement : MonoBehaviour {
         mov.x = Input.GetAxis("Horizontal");
         mov.z = Input.GetAxis("Vertical");
 
-        if (transform.position.z < 4.5)
+        if (transform.position.z < -0.63)
         {
             t = c;
         }
         else
         {
-            if (transform.position.z > 4.5)
+            if (transform.position.z > -0.63)
             {
                 t = c2;
             }
