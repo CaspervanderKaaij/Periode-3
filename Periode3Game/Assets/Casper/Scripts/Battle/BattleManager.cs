@@ -488,7 +488,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator Load()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(2.5f);
         SceneManager.LoadScene("Overworld");
     }
 

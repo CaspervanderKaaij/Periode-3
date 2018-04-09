@@ -22,13 +22,16 @@ public class BattleTransition : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        PlayerPrefs.SetFloat("overworldLastX", transform.position.x); //deze
+        PlayerPrefs.SetFloat("overworldLastY", transform.position.y); // deze
+        PlayerPrefs.SetFloat("overworldLastZ", transform.position.z); // hey levi, deze 3 lijnen zijn misschien handig :D
         if (hit == true)
         {
             if (mainCam.fieldOfView < 170)
             {
                 mainCam.fieldOfView += Time.unscaledDeltaTime * 200;
             }
-           // camRect.width -= Time.fixedUnscaledDeltaTime * 2;
+            // camRect.width -= Time.fixedUnscaledDeltaTime * 2;
             camRect.height -= Time.fixedUnscaledDeltaTime * 2;
             mainCam.rect = camRect;
         }
@@ -40,12 +43,10 @@ public class BattleTransition : MonoBehaviour
         {
             if (hit == false)
             {
-                EnemyID = collision.gameObject.GetComponent<ID>().slimeId;
+                EnemyID = collision.gameObject.GetComponent<ID>().battleId;
                 battleMusic = collision.gameObject.GetComponent<ID>().battleMusic;
+                GameObject.FindObjectOfType<NoDestroyLoad>().enemyDead[collision.gameObject.GetComponent<ID>().overworldId] = true;
                 PlayerPrefs.SetInt("enemy", EnemyID);
-               // PlayerPrefs.SetFloat("overworldLastX", transform.position.x); //deze
-               // PlayerPrefs.SetFloat("overworldLastY", transform.position.y); // deze
-               // PlayerPrefs.SetFloat("overworldLastZ", transform.position.z); // hey levi, deze 3 lijnen zijn misschien handig :D
                 // Application.LoadLevel("Scene");
                 StartCoroutine(Load());
                 transform.GetComponent<AudioSource>().Play();
