@@ -145,6 +145,7 @@ public class MenuB : MonoBehaviour {
     {
         menu.SetActive(false);
         b = false;
+        player.GetComponent<Movement>().enabled = true;
     }
 
     public void Exit()
