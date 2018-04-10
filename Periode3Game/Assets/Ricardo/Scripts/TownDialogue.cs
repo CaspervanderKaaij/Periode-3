@@ -22,6 +22,7 @@ public class TownDialogue : MonoBehaviour
     public bool first = true;
     public TownDialogue yesDialogue;
     public TownDialogue noDialogue;
+    private TownMovement twnMove;
 
     void Start()
     {
@@ -29,11 +30,12 @@ public class TownDialogue : MonoBehaviour
         NewText();
         manager = GameObject.FindObjectOfType<TownManager>();
         curPage = -1;
+        twnMove = GameObject.FindObjectOfType<TownMovement>();
     }
 
     void Update()
     {
-        GameObject.FindObjectOfType<TownMovement>().curState = TownMovement.State.Dialogue;
+        twnMove.curState = TownMovement.State.Dialogue;
         if (Input.GetButtonDown("Confirm"))
         {
             if (manager.yesNo.activeSelf == false)
@@ -63,7 +65,7 @@ public class TownDialogue : MonoBehaviour
         {
             if (yesNo == false)
             {
-                GameObject.FindObjectOfType<TownMovement>().curState = TownMovement.State.Normal;
+                twnMove.curState = TownMovement.State.Normal;
                 curPage = -1;
                 curTextInt = 0;
                 manager.dialogue.SetActive(false);

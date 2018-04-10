@@ -30,14 +30,15 @@ public class TownDialogueActivate : MonoBehaviour
                 if (Input.GetButtonDown("Confirm"))
                 {
                     manager.dialogue.SetActive(true);
-                    manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().text.Clear();
-                    manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().text.AddRange(txt);
-                    manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().talker.Clear();
-                    manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().talker.AddRange(talker);
-                    manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().yesNo = yesNo;
+                    TownDialogue twndia = manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>();
+                    twndia.text.Clear();
+                    twndia.text.AddRange(txt);
+                    twndia.talker.Clear();
+                    twndia.talker.AddRange(talker);
+                    twndia.yesNo = yesNo;
                     selecter.yesDialogue = yesDialogue;
                     selecter.noDialogue = noDialogue;
-                    manager.dialogue.transform.GetChild(3).GetComponent<TownDialogue>().first = true;
+                    twndia.first = true;
                     on = false;
                 }
             }

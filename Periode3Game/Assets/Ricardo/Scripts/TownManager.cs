@@ -11,7 +11,4 @@ public GameObject yesNo;
 		dialogue.SetActive(false);
 	}
 	
-	void Update () {
-		
-	}
 }
