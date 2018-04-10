@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Casper/Scene/Scene.unity
-    guid: a672b7a06a43ea849b57871dd99d19ae
-  - enabled: 1
     path: Assets/Stefan/Scenes/MainMenuScene.unity
     guid: d3868d5c24d93704bac20149b4875dfd
+  - enabled: 1
+    path: Assets/Casper/Scene/Scene.unity
+    guid: a672b7a06a43ea849b57871dd99d19ae
