@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public Button start;
-    public Button options;
-    public Button exit;
+    public Button b;
 
 	// Use this for initialization
 	void Start () {
-        start.onClick.AddListener(StartButton);
-        options.onClick.AddListener(OptionsButton);
-        exit.onClick.AddListener(ExitButton);
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if(Input.GetButtonDown("Fire1"))
+        {
+            b.Select();
+        }
     }
 
     public void StartButton()
     {
         print("Start");
+        SceneManager.LoadScene("CutSceneToOtherSceneScene");
     }
 
     public void OptionsButton()
@@ -34,5 +35,6 @@ public class MainMenu : MonoBehaviour {
     public void ExitButton()
     {
         print("Exit");
+        Application.Quit();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueScript : MonoBehaviour {
 
@@ -10,9 +11,12 @@ public class DialogueScript : MonoBehaviour {
     public Text text;
     public int lineNumber = 0;
 
+    public Camera cam;
+    public bool screenshake;
+
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(DiaTimer(2));
+        StartCoroutine(DiaTimer(1));
     }
 	
 	// Update is called once per frame
@@ -26,5 +30,13 @@ public class DialogueScript : MonoBehaviour {
         text.text = dia[lineNumber];
         lineNumber++;
         StartCoroutine(DiaTimer(textSpeed));
+        if(lineNumber >= (dia.Length / 2))
+        {
+            screenshake = true;
+        }
+        if (lineNumber >= dia.Length)
+        {
+            SceneManager.LoadScene("SpaceHubScene");
+        }
     }
 }
