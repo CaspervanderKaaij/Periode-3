@@ -39,6 +39,7 @@ public class CheatyStuff : MonoBehaviour {
         {
             // Cheat code successfully inputted!
             // Unlock crazy cheat code stuff
+            SceneManager.LoadScene("SMB1_1");
         }
     }
 }
