@@ -3348,6 +3348,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 01ad169e3c9144642b732e3f46b37617, type: 2}
+    - target: {fileID: 9500000, guid: 2b4cf83ab11d67d47bd03e47ad8d8b72, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2307fff45f249a84a91e063aba9a113e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b4cf83ab11d67d47bd03e47ad8d8b72, type: 3}
   m_IsPrefabParent: 0
@@ -4201,13 +4205,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 409071982}
-  m_LocalRotation: {x: -0, y: 0.70719457, z: -0, w: 0.70701903}
-  m_LocalPosition: {x: -1.122, y: 0.3415, z: -0.007}
+  m_LocalRotation: {x: -0, y: 0.91667366, z: -0, w: 0.39963654}
+  m_LocalPosition: {x: -2.002, y: 0.238, z: 1.565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 717914546}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90.01401, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 132.889, z: 0}
 --- !u!1 &414586640
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,7 +7006,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   atkType: 00000000
   damage:
-  - 1
+  - 3500
   attackNumber: 0
   toppleNumber: 99
   highLevelNumber: 99
@@ -7032,8 +7036,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.47915584, y: 0.47915584, z: 0.47915584}
-  m_Children:
-  - {fileID: 799436440}
+  m_Children: []
   m_Father: {fileID: 1728912822}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7074,7 +7077,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Useless waifu b!tch (tm)
+  m_Text: Ace
 --- !u!222 &724373570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7270,80 +7273,6 @@ Transform:
   m_Father: {fileID: 926830294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &799436439
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 799436440}
-  - component: {fileID: 799436442}
-  - component: {fileID: 799436441}
-  m_Layer: 5
-  m_Name: CharacterName (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &799436440
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 799436439}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.40581557, y: 0.40581557, z: 0.40581557}
-  m_Children: []
-  m_Father: {fileID: 724373568}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200.35236, y: -158.61223}
-  m_SizeDelta: {x: 782.1, y: 146.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &799436441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 799436439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 7459df14062383041a905fa12ee65634, type: 3}
-    m_FontSize: 106
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 106
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: "She qt tho ( \u0361\xB0 \u035C\u0296 \u0361\xB0)"
---- !u!222 &799436442
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 799436439}
 --- !u!1 &803221296
 GameObject:
   m_ObjectHideFlags: 0
@@ -13981,81 +13910,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
---- !u!1 &1111091332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1111091333}
-  - component: {fileID: 1111091335}
-  - component: {fileID: 1111091334}
-  m_Layer: 5
-  m_Name: Also this is her only fucking attack. Just stop using her.. this is seriously
-    sickening! (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1111091333
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1111091332}
-  m_LocalRotation: {x: -0, y: -0, z: 0.024739917, w: 0.999694}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19068106, y: 0.19068103, z: 0.19068103}
-  m_Children: []
-  m_Father: {fileID: 1728912822}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.835}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -938.9, y: -436.8}
-  m_SizeDelta: {x: 1024.3, y: 146.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1111091334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1111091332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 7459df14062383041a905fa12ee65634, type: 3}
-    m_FontSize: 106
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 106
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: ARM
---- !u!222 &1111091335
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1111091332}
 --- !u!1 &1113586784
 GameObject:
   m_ObjectHideFlags: 0
@@ -14666,14 +14520,14 @@ RectTransform:
   m_GameObject: {fileID: 1156474651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0272789, y: 1.0272794, z: 1.0272794}
+  m_LocalScale: {x: 0.48454702, y: 0.48454723, z: 0.48454723}
   m_Children: []
   m_Father: {fileID: 1728912822}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -920, y: -497}
+  m_AnchoredPosition: {x: -830, y: -448.6}
   m_SizeDelta: {x: 258, y: 297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156474653
@@ -14695,7 +14549,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b497de8fe5b32942a59ca13fbd3d66e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0ff217ef78ec3445a186d8f142f71d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -16368,8 +16222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Also this is her only fucking attack. Just stop using her.. this is seriously
-    sickening!
+  m_Text: He doesn't have any attacks yet. But Ashley will change that.. I think
 --- !u!222 &1321364323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17078,7 +16931,7 @@ GameObject:
   - component: {fileID: 1409034933}
   - component: {fileID: 1409034932}
   - component: {fileID: 1409034931}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19848,12 +19701,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1728912822}
   m_Layer: 5
-  m_Name: SelectAttackUIFiora
+  m_Name: SelectAttackUIAce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1728912822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19870,7 +19723,6 @@ RectTransform:
   - {fileID: 1321364321}
   - {fileID: 1156474652}
   - {fileID: 1383889459}
-  - {fileID: 1111091333}
   m_Father: {fileID: 1272139315}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20753,7 +20605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1840985058
 Light:
   m_ObjectHideFlags: 0
@@ -20763,13 +20615,13 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.034482475, g: 0, b: 1, a: 1}
+  m_Intensity: 9.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -20782,8 +20634,8 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
+    m_Bits: 4096
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_FalloffTable:
@@ -20810,13 +20662,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1840985057}
-  m_LocalRotation: {x: 0.5840045, y: 0.43050623, z: -0.15935443, w: 0.6694844}
-  m_LocalPosition: {x: -2.765991, y: 3.0933917, z: 0.62}
+  m_LocalRotation: {x: -0.6898242, y: -0, z: -0, w: 0.7239769}
+  m_LocalPosition: {x: -7.63, y: 3.39, z: 3.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 66.805, y: 97.703, z: 47.302002}
+  m_LocalEulerAnglesHint: {x: -87.232, y: 0, z: 0}
 --- !u!1 &1849686191
 GameObject:
   m_ObjectHideFlags: 0
