@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour {
 
@@ -66,6 +67,7 @@ public class Interactable : MonoBehaviour {
 
     public void TestFunction()
     {
-        conv.SetActive(true);
+        print("LoadScene");
+        SceneManager.LoadScene("Overworld");
     }
 }
