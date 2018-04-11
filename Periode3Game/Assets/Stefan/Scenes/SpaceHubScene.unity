@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: fd6d1264e2a5db94ca07e3e0d2814450,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -990,6 +991,7 @@ GameObject:
   - component: {fileID: 362018395}
   - component: {fileID: 362018394}
   - component: {fileID: 362018399}
+  - component: {fileID: 362018400}
   m_Layer: 0
   m_Name: Cam 1
   m_TagString: MainCamera
@@ -1081,6 +1083,17 @@ MonoBehaviour:
   t: {fileID: 1993901481}
   c: {fileID: 362018397}
   c2: {fileID: 824462979}
+--- !u!114 &362018400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362018393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604827d8389648044abb622e9de31f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453403497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,7 +1633,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5a853cb08331d7343afd9b8b3fe056a3, type: 2}
+  - {fileID: 2100000, guid: 6fdbae1a678d35f47b48eee58cd723cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

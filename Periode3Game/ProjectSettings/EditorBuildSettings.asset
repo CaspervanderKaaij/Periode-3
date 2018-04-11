@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Stefan/Scenes/MainMenuScene.unity
     guid: d3868d5c24d93704bac20149b4875dfd
   - enabled: 1
+    path: Assets/Stefan/Scenes/CutSceneToOtherSceneScene.unity
+    guid: b812252b3813a7b4a8ec7af6ef44ee91
+  - enabled: 1
+    path: Assets/Stefan/Scenes/SpaceHubScene.unity
+    guid: 3ac2c2efb4907aa4ab79e37ea83ddebe
+  - enabled: 1
+    path: Assets/Levi(Indye)/Overworld.unity
+    guid: 5179186d9b54a544794138f85eff04af
+  - enabled: 1
     path: Assets/Casper/Scene/Scene.unity
     guid: a672b7a06a43ea849b57871dd99d19ae
   - enabled: 1
