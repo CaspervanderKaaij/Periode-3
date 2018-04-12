@@ -17,6 +17,9 @@ public class Interactable : MonoBehaviour {
     public Renderer rend;
     public GameObject conv;
 
+    public GameObject loadScreen;
+    public GameObject moveHolder;
+
     // Use this for initialization
     void Start () {
         rend = GetComponent<Renderer>();
@@ -65,9 +68,17 @@ public class Interactable : MonoBehaviour {
         }
 	}
 
+    public IEnumerator LoadTimer(float t)
+    {
+        yield return new WaitForSeconds(t);
+        SceneManager.LoadScene("Overworld");
+    }
+
     public void TestFunction()
     {
         print("LoadScene");
-        SceneManager.LoadScene("Overworld");
+        loadScreen.SetActive(true);
+        moveHolder.GetComponent<Movement>().enabled = false;
+        StartCoroutine(LoadTimer(2));
     }
 }

@@ -7,12 +7,19 @@ public class CheatyStuff : MonoBehaviour {
 
     private string[] cheatCode;
     private int index;
+    public GameObject loadScreen;
 
     void Start()
     {
         // Code is "idkfa", user needs to input this in the right order
         cheatCode = new string[] { "m", "a", "r", "i", "o" };
         index = 0;
+    }
+
+    public IEnumerator DiaTimer(float t)
+    {
+        yield return new WaitForSeconds(t);
+        SceneManager.LoadScene("SMB1_1");
     }
 
     void Update()
@@ -39,7 +46,8 @@ public class CheatyStuff : MonoBehaviour {
         {
             // Cheat code successfully inputted!
             // Unlock crazy cheat code stuff
-            SceneManager.LoadScene("SMB1_1");
+            loadScreen.SetActive(true);
+            StartCoroutine(DiaTimer(2));
         }
     }
 }
