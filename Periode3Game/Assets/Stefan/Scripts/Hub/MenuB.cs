@@ -127,6 +127,8 @@ public class MenuB : MonoBehaviour {
                 b = true;
                 menu.SetActive(true);
                 player.GetComponent<Movement>().enabled = false;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             else
             {
@@ -135,6 +137,8 @@ public class MenuB : MonoBehaviour {
                     b = false;
                     menu.SetActive(false);
                     player.GetComponent<Movement>().enabled = true;
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                 }
             }
             

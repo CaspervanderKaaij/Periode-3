@@ -27,11 +27,6 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("CutSceneToOtherSceneScene");
     }
 
-    public void OptionsButton()
-    {
-        print("Options");
-    }
-
     public void ExitButton()
     {
         print("Exit");

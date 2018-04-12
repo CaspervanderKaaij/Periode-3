@@ -32,6 +32,7 @@ public class BattleManager : MonoBehaviour
 
     [Header("Handy's & helpers")]
     public bool vibration = true;
+    public Toggle vibrations;
     public GameObject slashEffect;
     public Image startFade;
     public float timeScale = 1;
@@ -102,6 +103,16 @@ public class BattleManager : MonoBehaviour
         enemies = enemies.OrderBy(go => go.name).ToList();
 
         //DoDamage (enemies[0].gameObject,100,Random.Range(0.85f,1.15f));
+        if (PlayerPrefs.GetInt("Vibrate") == 1)
+        {
+            vibration = true;
+            vibrations.interactable = true;
+        }
+        else
+        {
+            vibration = false;
+            vibrations.interactable = false;
+        }
     }
 
     public void ToggleVibration()
@@ -447,6 +458,8 @@ public class BattleManager : MonoBehaviour
         }
 
         Time.timeScale = timeScale;
+
+        print(vibration);
     }
 
     void Cooldown()

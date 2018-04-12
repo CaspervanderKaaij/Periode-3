@@ -21,8 +21,11 @@ public class DialogueScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.anyKeyDown)
+        {
+            SceneManager.LoadScene("SpaceHubScene");
+        }
+    }
 
     public IEnumerator DiaTimer(float t)
     {
