@@ -61,15 +61,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 6e6d418215811c345ac98a7a7e307103, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52c4158c46d4795489fd09a383663c1d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 79cce3e2d85673c46809138e463a18cc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 132a57ea14f2b124fa3ec60993f9b4f9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 4f7d2401b4627504fb63cacb2e460468, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a92e3a323f4c2a4196f4bee6dc4a97b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -98,19 +98,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 6e6d418215811c345ac98a7a7e307103, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52c4158c46d4795489fd09a383663c1d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 79cce3e2d85673c46809138e463a18cc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 132a57ea14f2b124fa3ec60993f9b4f9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowTex:
-        m_Texture: {fileID: 2800000, guid: 6d334e367638038409fe6efae4a554bd, type: 3}
+        m_Texture: {fileID: 2800000, guid: d602511db5cba9541bd15e9f2b968aa0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 4f7d2401b4627504fb63cacb2e460468, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a92e3a323f4c2a4196f4bee6dc4a97b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -133,6 +133,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -149,6 +150,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 510
-  materialHash: c11596079b0b739ebf32623d25eb94a5215482368
+  materialHash: fc8720bc089ea48f7f12bf9c16c70ae0215482368
   root:
     _uniqueID: 1
     seed: 1234
