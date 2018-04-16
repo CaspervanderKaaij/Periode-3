@@ -16,6 +16,7 @@ public class Interactable : MonoBehaviour {
     public float duration = 1.0F;
     public Renderer rend;
     public GameObject conv;
+    public AudioSource interact;
 
     public GameObject loadScreen;
     public GameObject moveHolder;
@@ -77,6 +78,7 @@ public class Interactable : MonoBehaviour {
     public void TestFunction()
     {
         print("LoadScene");
+        interact.Play();
         loadScreen.SetActive(true);
         moveHolder.GetComponent<Movement>().enabled = false;
         StartCoroutine(LoadTimer(2));
