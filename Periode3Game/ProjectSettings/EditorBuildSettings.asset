@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Stefan/Scenes/CutSceneToOtherSceneScene.unity
     guid: b812252b3813a7b4a8ec7af6ef44ee91
   - enabled: 1
+    path: Assets/Stefan/Scenes/CutSceneToOtherSceneScene.unity
+    guid: b812252b3813a7b4a8ec7af6ef44ee91
+  - enabled: 1
     path: Assets/Stefan/Scenes/SpaceHubScene.unity
     guid: 3ac2c2efb4907aa4ab79e37ea83ddebe
   - enabled: 1
@@ -21,11 +24,8 @@ EditorBuildSettings:
     path: Assets/Casper/Scene/Scene.unity
     guid: a672b7a06a43ea849b57871dd99d19ae
   - enabled: 1
-    path: Assets/Stefan/Scenes/CutSceneToOtherSceneScene.unity
-    guid: b812252b3813a7b4a8ec7af6ef44ee91
-  - enabled: 0
-    path: Assets/Casper/Super Mario Bros/MarioFiles/Scene.unity
-    guid: 2f3af24f40e072a4f82ce845833c0a6b
-  - enabled: 1
     path: Assets/Casper/Super Mario Bros/MarioFiles/SMB1_1.unity
     guid: 80c62be89b8d05d45a99396087f95f21
+  - enabled: 0
+    path: 
+    guid: 2f3af24f40e072a4f82ce845833c0a6b
