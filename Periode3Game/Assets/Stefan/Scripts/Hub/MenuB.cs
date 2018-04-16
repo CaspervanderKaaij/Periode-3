@@ -27,6 +27,12 @@ public class MenuB : MonoBehaviour {
     public Button three;
     public Button four;
 
+    public GameObject c1;
+    public GameObject c2;
+    public GameObject c3;
+    public GameObject c4;
+    public GameObject movementHolder;
+
     public GameObject menu;
     public GameObject conv;
     public bool b;
@@ -126,7 +132,7 @@ public class MenuB : MonoBehaviour {
             {
                 b = true;
                 menu.SetActive(true);
-                player.GetComponent<Movement>().enabled = false;
+                //player.GetComponent<Movement>().enabled = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
@@ -136,7 +142,7 @@ public class MenuB : MonoBehaviour {
                 {
                     b = false;
                     menu.SetActive(false);
-                    player.GetComponent<Movement>().enabled = true;
+                    //player.GetComponent<Movement>().enabled = true;
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                 }
@@ -149,7 +155,7 @@ public class MenuB : MonoBehaviour {
     {
         menu.SetActive(false);
         b = false;
-        player.GetComponent<Movement>().enabled = true;
+        //player.GetComponent<Movement>().enabled = true;
     }
 
     public void Exit()
@@ -159,25 +165,41 @@ public class MenuB : MonoBehaviour {
 
     public void First()
     {
-        r.material.color = Color.red;
+        c1.SetActive(true);
+        c2.SetActive(false);
+        c3.SetActive(false);
+        c4.SetActive(false);
+        movementHolder.GetComponent<Movement>().character = c1;
         character = 1;
     }
 
     public void Second()
     {
-        r.material.color = Color.green;
+        c1.SetActive(false);
+        c2.SetActive(true);
+        c3.SetActive(false);
+        c4.SetActive(false);
+        movementHolder.GetComponent<Movement>().character = c2;
         character = 2;
     }
 
     public void Third()
     {
-        r.material.color = Color.yellow;
+        c1.SetActive(false);
+        c2.SetActive(false);
+        c3.SetActive(true);
+        c4.SetActive(false);
+        movementHolder.GetComponent<Movement>().character = c3;
         character = 3;
     }
 
     public void Fourth()
     {
-        r.material.color = Color.blue;
+        c1.SetActive(false);
+        c2.SetActive(false);
+        c3.SetActive(false);
+        c4.SetActive(true);
+        movementHolder.GetComponent<Movement>().character = c4;
         character = 4;
     }
 
