@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour {
     public Transform t;
     public Vector3 tL;
     public GameObject character;
+    public GameObject canva;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,14 @@ public class Movement : MonoBehaviour {
         transform.Translate(mov * Time.deltaTime * speed);
 
         tL = new Vector3(t.position.x, transform.position.y, t.position.z);
+
+        if (character.GetComponent<Animator>() != null)
+        {
+            if (character.GetComponent<Animator>().runtimeAnimatorController != null)
+            {
+                character.GetComponent<Animator>().SetFloat("anal", Vector2.SqrMagnitude(new Vector2(mov.x, mov.z)));
+            }
+        }
 
         if (Vector2.SqrMagnitude(new Vector2(mov.x, mov.z)) != 0)
         {
