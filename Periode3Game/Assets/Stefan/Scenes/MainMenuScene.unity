@@ -321,7 +321,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e6e079ad87b48fe4e99ace47bf838c7b,
+    m_HighlightedSprite: {fileID: 21300000, guid: 8204ec3e254d63f44895c596224b43ce,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 80cde3d90e9e8b5488850ef93b101028, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -367,8 +367,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8204ec3e254d63f44895c596224b43ce, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -603,6 +603,7 @@ GameObject:
   - component: {fileID: 591906215}
   - component: {fileID: 591906214}
   - component: {fileID: 591906220}
+  - component: {fileID: 591906221}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -704,6 +705,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScreen: {fileID: 2129719545}
+--- !u!82 &591906221
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591906213}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 95cc867c41f276c4faaf22c3cc5167d0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.654
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &611512712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2204,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e6e079ad87b48fe4e99ace47bf838c7b,
+    m_HighlightedSprite: {fileID: 21300000, guid: 8204ec3e254d63f44895c596224b43ce,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 80cde3d90e9e8b5488850ef93b101028, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -2169,8 +2250,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8204ec3e254d63f44895c596224b43ce, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

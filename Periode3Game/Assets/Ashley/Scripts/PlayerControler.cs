@@ -26,8 +26,8 @@ public class PlayerControler : MonoBehaviour {
         transform.Translate(v / walkSpeed * Time.deltaTime);
         hor = Input.GetAxis("Horizontal");
         ver = Input.GetAxis("Vertical");
-        v.x = hor;
-        v.z = ver;
+        v.z = hor;
+        v.x = -ver;
         if (Input.GetButtonDown("Jump"))
         {
             GetComponent<Rigidbody>().velocity += jumpSpeed * Vector3.up;
