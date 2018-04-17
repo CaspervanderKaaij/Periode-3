@@ -459,7 +459,7 @@ public class BattleManager : MonoBehaviour
 
         Time.timeScale = timeScale;
 
-        print(vibration);
+       // print(vibration);
     }
 
     void Cooldown()
