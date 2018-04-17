@@ -39,12 +39,9 @@ public class Movement : MonoBehaviour {
 
         tL = new Vector3(t.position.x, transform.position.y, t.position.z);
 
-        if (character.GetComponent<Animator>() != null)
+        if (character.GetComponent<Animator>() != null && character.GetComponent<Animator>().runtimeAnimatorController != null)
         {
-            if (character.GetComponent<Animator>().runtimeAnimatorController != null)
-            {
-                character.GetComponent<Animator>().SetFloat("anal", Vector2.SqrMagnitude(new Vector2(mov.x, mov.z)));
-            }
+            character.GetComponent<Animator>().SetFloat("anal", Vector2.SqrMagnitude(new Vector2(mov.x, mov.z)));
         }
 
         if (Vector2.SqrMagnitude(new Vector2(mov.x, mov.z)) != 0)

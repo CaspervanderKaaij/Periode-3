@@ -165,41 +165,41 @@ public class MenuB : MonoBehaviour {
 
     public void First()
     {
+        movementHolder.GetComponent<Movement>().character = c1;
         c1.SetActive(true);
         c2.SetActive(false);
         c3.SetActive(false);
         c4.SetActive(false);
-        movementHolder.GetComponent<Movement>().character = c1;
         character = 1;
     }
 
     public void Second()
     {
+        movementHolder.GetComponent<Movement>().character = c2;
         c1.SetActive(false);
         c2.SetActive(true);
         c3.SetActive(false);
         c4.SetActive(false);
-        movementHolder.GetComponent<Movement>().character = c2;
         character = 2;
     }
 
     public void Third()
     {
+        movementHolder.GetComponent<Movement>().character = c3;
         c1.SetActive(false);
         c2.SetActive(false);
         c3.SetActive(true);
         c4.SetActive(false);
-        movementHolder.GetComponent<Movement>().character = c3;
         character = 3;
     }
 
     public void Fourth()
     {
+        movementHolder.GetComponent<Movement>().character = c4;
         c1.SetActive(false);
         c2.SetActive(false);
         c3.SetActive(false);
         c4.SetActive(true);
-        movementHolder.GetComponent<Movement>().character = c4;
         character = 4;
     }
 
