@@ -1609,14 +1609,14 @@ MonoBehaviour:
   cam: {fileID: 1252585367}
   timer: 0
   anim: {fileID: 0}
-  atkType: 010000000000000001000000
+  atkType: 000000000000000001000000
   damage:
-  - 4000
-  - 99999
+  - 6000
+  - 7000
   - 4000
   attackNumber: 0
   toppleNumber: 1
-  highLevelNumber: 2
+  highLevelNumber: 1
 --- !u!1 &189805225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.25379, y: 49.75598}
+  m_AnchoredPosition: {x: -105.74864, y: 39.911987}
   m_SizeDelta: {x: 25, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189805227
@@ -2489,7 +2489,7 @@ GameObject:
   - component: {fileID: 242347258}
   - component: {fileID: 242347257}
   m_Layer: 5
-  m_Name: OP attack
+  m_Name: Roast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2503,7 +2503,7 @@ RectTransform:
   m_GameObject: {fileID: 242347255}
   m_LocalRotation: {x: -0, y: -0, z: 0.071201816, w: 0.997462}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50129116, y: 0.5012918, z: 0.5012918}
+  m_LocalScale: {x: 0.9544363, y: 0.9544379, z: 0.9544379}
   m_Children: []
   m_Father: {fileID: 1641117443}
   m_RootOrder: 5
@@ -2545,7 +2545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: OP attack
+  m_Text: Roast
 --- !u!222 &242347258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3167,8 +3167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 867.95, y: -143.44}
-  m_SizeDelta: {x: 2346.54, y: 109}
+  m_AnchoredPosition: {x: 873.32, y: -141.93}
+  m_SizeDelta: {x: 2329.77, y: 109.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291651992
 MonoBehaviour:
@@ -4163,8 +4163,6 @@ RectTransform:
   - {fileID: 881679946}
   - {fileID: 1443675937}
   - {fileID: 1839228554}
-  - {fileID: 928985017}
-  - {fileID: 1229264598}
   - {fileID: 1203951913}
   - {fileID: 2046061105}
   - {fileID: 2021706882}
@@ -6067,7 +6065,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 566444270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -6876,7 +6874,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   atkType: 00000000
   damage:
-  - 3500
+  - 10000
   attackNumber: 0
   toppleNumber: 99
   highLevelNumber: 99
@@ -6903,13 +6901,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724373567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.07931758, w: 0.9968494}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.47915584, y: 0.47915584, z: 0.47915584}
+  m_LocalScale: {x: 1.4418712, y: 1.4418706, z: 1.4418706}
   m_Children: []
   m_Father: {fileID: 1728912822}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.099}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -801, y: -328}
@@ -7753,8 +7751,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 867.68, y: -146.64}
-  m_SizeDelta: {x: 2347.28, y: 122.65}
+  m_AnchoredPosition: {x: 872.43, y: -148.89}
+  m_SizeDelta: {x: 2330.51, y: 117.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834797521
 MonoBehaviour:
@@ -11401,7 +11399,7 @@ GameObject:
   - component: {fileID: 881679948}
   - component: {fileID: 881679947}
   m_Layer: 5
-  m_Name: Heals (OP) but you need level 2!
+  m_Name: Energize
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11415,7 +11413,7 @@ RectTransform:
   m_GameObject: {fileID: 881679945}
   m_LocalRotation: {x: -0, y: -0, z: 0.07403984, w: 0.9972553}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.46733472, y: 0.46733508, z: 0.46733508}
+  m_LocalScale: {x: 0.5460807, y: 0.54608136, z: 0.54608136}
   m_Children: []
   m_Father: {fileID: 390943060}
   m_RootOrder: 5
@@ -11457,7 +11455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Heals (OP) but you need level 2!
+  m_Text: Energize
 --- !u!222 &881679948
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11505,7 +11503,7 @@ GameObject:
   - component: {fileID: 903041801}
   - component: {fileID: 903041800}
   m_Layer: 5
-  m_Name: Heals (OP)
+  m_Name: Blaze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11519,7 +11517,7 @@ RectTransform:
   m_GameObject: {fileID: 903041798}
   m_LocalRotation: {x: -0, y: -0, z: 0.07403984, w: 0.9972553}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6438378, y: 0.6438383, z: 0.6438383}
+  m_LocalScale: {x: 0.7523246, y: 0.7523255, z: 0.7523255}
   m_Children: []
   m_Father: {fileID: 390943060}
   m_RootOrder: 3
@@ -11561,7 +11559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Heals (OP)
+  m_Text: Blaze
 --- !u!222 &903041801
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11793,80 +11791,6 @@ Transform:
   m_Father: {fileID: 1312074944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &928985016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 928985017}
-  - component: {fileID: 928985019}
-  - component: {fileID: 928985018}
-  m_Layer: 5
-  m_Name: Heals (OP) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &928985017
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 928985016}
-  m_LocalRotation: {x: -0, y: -0, z: 0.07403984, w: 0.9972553}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.64383996, y: 0.64383996, z: 0.64383996}
-  m_Children: []
-  m_Father: {fileID: 390943060}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.492001}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -310.39996, y: -347.4}
-  m_SizeDelta: {x: 782.1, y: 146.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &928985018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 928985016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 71b661423a52fb14dbcdbcf75d9b412f, type: 3}
-    m_FontSize: 106
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 106
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: '[Heal all]'
---- !u!222 &928985019
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 928985016}
 --- !u!1 &930100780
 GameObject:
   m_ObjectHideFlags: 0
@@ -12021,7 +11945,7 @@ GameObject:
   - component: {fileID: 964188866}
   - component: {fileID: 964188865}
   m_Layer: 5
-  m_Name: Lame attack
+  m_Name: Dominate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12035,7 +11959,7 @@ RectTransform:
   m_GameObject: {fileID: 964188863}
   m_LocalRotation: {x: -0, y: -0, z: 0.07403984, w: 0.9972553}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6438378, y: 0.6438383, z: 0.6438383}
+  m_LocalScale: {x: 0.61442775, y: 0.6144285, z: 0.6144285}
   m_Children: []
   m_Father: {fileID: 390943060}
   m_RootOrder: 4
@@ -12077,7 +12001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Lame attack
+  m_Text: Dominate
 --- !u!222 &964188866
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12102,20 +12026,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &976199473
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976199468}
-  m_LocalRotation: {x: -0, y: 0.7071066, z: -0, w: -0.70710695}
-  m_LocalPosition: {x: 0.97, y: 0.268, z: 0.0692}
+  m_LocalRotation: {x: 0.09404388, y: 0.9647953, z: 0.02382828, w: -0.2444547}
+  m_LocalPosition: {x: 2.12, y: -0.132, z: 2.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1079943080}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.276, y: 207.98299, z: 9.819}
 --- !u!1 &976942794
 GameObject:
   m_ObjectHideFlags: 0
@@ -12659,10 +12583,9 @@ MonoBehaviour:
   - {fileID: 881679945}
   curPos: 0
   atackName:
-  - You cheated :D
-  - 'yellow black yellow black yellow black yellow black yellow black yellow black
-    yellow black yellow black yellow black '
-  - Your adopted lol
+  - Blaze
+  - Dominate
+  - Energize
   playerNumber: 2
 --- !u!114 &1039394189
 MonoBehaviour:
@@ -12826,10 +12749,10 @@ MonoBehaviour:
   - {fileID: 1742144047}
   curPos: 0
   atackName:
-  - Meh attack
-  - Topple I guess
-  - FUCK YOU BITCH
-  - UR MOM GAY ASF
+  - Pound
+  - Parry
+  - Roast
+  - Rage
   playerNumber: 1
 --- !u!114 &1044121262
 MonoBehaviour:
@@ -13244,8 +13167,8 @@ MonoBehaviour:
   damage:
   - 1500
   - 4000
-  - 4000
-  - 4000
+  - 8000
+  - 8000
   attackNumber: 0
   toppleNumber: 1
   highLevelNumber: 2
@@ -13900,8 +13823,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 868.24, y: -142.61}
-  m_SizeDelta: {x: 2347.2, y: 105.6}
+  m_AnchoredPosition: {x: 873.46, y: -142.08}
+  m_SizeDelta: {x: 2330.43, y: 101.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113586786
 MonoBehaviour:
@@ -14300,7 +14223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672664072f1d9084bac3baa1c52a4ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 90000
+  health: 30000
   enemy: 0
 --- !u!114 &1144439255
 MonoBehaviour:
@@ -14468,7 +14391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1156474652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14690,7 +14613,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1173065291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -14932,7 +14855,7 @@ RectTransform:
   m_LocalScale: {x: 0.41205737, y: 0.41205737, z: 0.41205737}
   m_Children: []
   m_Father: {fileID: 390943060}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.492001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15182,80 +15105,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &1229264597
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1229264598}
-  - component: {fileID: 1229264600}
-  - component: {fileID: 1229264599}
-  m_Layer: 5
-  m_Name: Heals (OP) (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1229264598
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1229264597}
-  m_LocalRotation: {x: -0, y: -0, z: 0.07403984, w: 0.9972553}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4842738, y: 0.4842738, z: 0.4842738}
-  m_Children: []
-  m_Father: {fileID: 390943060}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.492001}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136, y: -376}
-  m_SizeDelta: {x: 782.1, y: 146.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1229264599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1229264597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 71b661423a52fb14dbcdbcf75d9b412f, type: 3}
-    m_FontSize: 106
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 106
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: '[999999 DMG]'
---- !u!222 &1229264600
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1229264597}
 --- !u!1 &1235824687
 GameObject:
   m_ObjectHideFlags: 0
@@ -15416,13 +15265,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252585367}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.114, y: -0.099, z: 4.346}
+  m_LocalRotation: {x: 0.11564486, y: 0.2600778, z: 0.09187473, w: -0.9542247}
+  m_LocalPosition: {x: 1.039, y: -0.428, z: -1.943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 186760198}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -15.575001, y: 330.449, z: -6.8680005}
 --- !u!1 &1256662617
 GameObject:
   m_ObjectHideFlags: 0
@@ -15434,7 +15283,7 @@ GameObject:
   - component: {fileID: 1256662620}
   - component: {fileID: 1256662619}
   m_Layer: 5
-  m_Name: Has a topple effect
+  m_Name: Parry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15448,7 +15297,7 @@ RectTransform:
   m_GameObject: {fileID: 1256662617}
   m_LocalRotation: {x: -0, y: -0, z: 0.071201816, w: 0.997462}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50129116, y: 0.5012918, z: 0.5012918}
+  m_LocalScale: {x: 0.9544363, y: 0.9544379, z: 0.9544379}
   m_Children: []
   m_Father: {fileID: 1641117443}
   m_RootOrder: 4
@@ -15490,7 +15339,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Has a topple effect
+  m_Text: Parry
 --- !u!222 &1256662620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16025,7 +15874,7 @@ GameObject:
   - component: {fileID: 1321364323}
   - component: {fileID: 1321364322}
   m_Layer: 5
-  m_Name: He doesn't have any attacks yet. But Ashley will change that.. I think
+  m_Name: Awakening
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16037,13 +15886,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1321364320}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.06746588, w: 0.9977216}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3614681, y: 0.36146823, z: 0.36146823}
+  m_LocalScale: {x: 1.1659516, y: 1.165952, z: 1.165952}
   m_Children: []
   m_Father: {fileID: 1728912822}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.7370005}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 72, y: -407}
@@ -16081,7 +15930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: He doesn't have any attacks yet. But Ashley will change that.. I think
+  m_Text: Awakening
 --- !u!222 &1321364323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16360,7 +16209,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1354568252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -16745,7 +16594,7 @@ Transform:
   m_GameObject: {fileID: 1393528132}
   m_LocalRotation: {x: 7.549527e-12, y: 0.000000067173126, z: 0.0023831837, w: 0.9999972}
   m_LocalPosition: {x: 1.5310325e-10, y: 0.0069999257, z: 3.3726e-12}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_LocalScale: {x: 1.1141421, y: 1.1141421, z: 1.1141422}
   m_Children:
   - {fileID: 479075238}
   m_Father: {fileID: 1866495835}
@@ -17361,7 +17210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1443675937
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18631,7 +18480,7 @@ GameObject:
   - component: {fileID: 1629475756}
   - component: {fileID: 1629475755}
   m_Layer: 5
-  m_Name: Does medium damage
+  m_Name: Pound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18645,7 +18494,7 @@ RectTransform:
   m_GameObject: {fileID: 1629475753}
   m_LocalRotation: {x: -0, y: -0, z: 0.071201816, w: 0.997462}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50129116, y: 0.5012918, z: 0.5012918}
+  m_LocalScale: {x: 0.9544363, y: 0.9544379, z: 0.9544379}
   m_Children: []
   m_Father: {fileID: 1641117443}
   m_RootOrder: 3
@@ -18687,7 +18536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Does medium damage
+  m_Text: Pound
 --- !u!222 &1629475756
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19505,7 +19354,6 @@ MonoBehaviour:
   - {fileID: 1571290346700732, guid: 4450f0dec2e84b7408f57648e32f05e7, type: 2}
   - {fileID: 1093336300321468, guid: e425320a20363734da6e756585b7d47a, type: 2}
   - {fileID: 1855935048355074, guid: 8d7b4378cc7b7374bbe56cbaac689d17, type: 2}
-  - {fileID: 1838314009164892, guid: de3ea7524c2720e40aaafff92ba2af7f, type: 2}
   enemyHealthUI:
   - {fileID: 1144439254}
   selectAtackUI:
@@ -19841,7 +19689,7 @@ GameObject:
   - component: {fileID: 1742144050}
   - component: {fileID: 1742144049}
   m_Layer: 5
-  m_Name: copy of OP attack
+  m_Name: Rage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19855,7 +19703,7 @@ RectTransform:
   m_GameObject: {fileID: 1742144047}
   m_LocalRotation: {x: -0, y: -0, z: 0.071201816, w: 0.997462}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50129116, y: 0.5012918, z: 0.5012918}
+  m_LocalScale: {x: 0.9544363, y: 0.9544379, z: 0.9544379}
   m_Children: []
   m_Father: {fileID: 1641117443}
   m_RootOrder: 6
@@ -19897,7 +19745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: copy of OP attack
+  m_Text: Rage
 --- !u!222 &1742144050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20704,7 +20552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1840985058
 Light:
   m_ObjectHideFlags: 0
@@ -20870,8 +20718,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 84, y: -406}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 95, y: -415}
+  m_SizeDelta: {x: 211, y: 80.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860007699
 MonoBehaviour:
@@ -20888,7 +20736,7 @@ MonoBehaviour:
   - {fileID: 1321364320}
   curPos: 0
   atackName:
-  - "\xAF\\_(\u30C4)_/\xAF"
+  - Awakening
   playerNumber: 3
 --- !u!114 &1860007700
 MonoBehaviour:
@@ -20968,7 +20816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1870854409
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22043,8 +21891,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.439}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 868.24, y: -142.98}
-  m_SizeDelta: {x: 2347.2, y: 99.89}
+  m_AnchoredPosition: {x: 873.17, y: -144.16}
+  m_SizeDelta: {x: 2330.43, y: 108.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988505971
 MonoBehaviour:
@@ -22296,7 +22144,7 @@ GameObject:
   - component: {fileID: 2021706884}
   - component: {fileID: 2021706883}
   m_Layer: 5
-  m_Name: Heals (OP) (5)
+  m_Name: ToppleStat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22313,7 +22161,7 @@ RectTransform:
   m_LocalScale: {x: 0.522615, y: 0.522615, z: 0.522615}
   m_Children: []
   m_Father: {fileID: 390943060}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.492001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22626,7 +22474,7 @@ RectTransform:
   m_LocalScale: {x: 0.43974528, y: 0.43974528, z: 0.43974528}
   m_Children: []
   m_Father: {fileID: 390943060}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.492001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22847,7 +22695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2066503952
 Transform:
   m_ObjectHideFlags: 0
@@ -22855,7 +22703,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066503947}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.114, y: 0.3415, z: 0.658}
+  m_LocalPosition: {x: -0.207, y: 0.015, z: 2.501}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 237606666}
@@ -23043,7 +22891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2084223979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23116,13 +22964,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099377687}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.77, y: 0.944, z: -14.07}
+  m_LocalRotation: {x: 0.41670868, y: -0, z: -0, w: 0.9090401}
+  m_LocalPosition: {x: 1.77, y: 25.57, z: -21.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 803221297}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 49.254, y: 0, z: 0}
 --- !u!1 &2112117063
 GameObject:
   m_ObjectHideFlags: 0
