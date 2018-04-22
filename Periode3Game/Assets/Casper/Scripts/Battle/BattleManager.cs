@@ -310,18 +310,18 @@ public class BattleManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            fadeIn.color = fadeColor;
+           // fadeIn.color = fadeColor;
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            charge[0] = 200;
-            charge[1] = 200;
-            charge[2] = 200;
-            charge[3] = 200;
+            //charge[0] = 200;
+            //charge[1] = 200;
+           // charge[2] = 200;
+            //charge[3] = 200;
         }
 
         for (int i = 0; i < charge.Length; i++)
