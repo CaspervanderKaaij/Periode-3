@@ -47,7 +47,8 @@ public class CharacterChanger : MonoBehaviour {
         c2.SetActive(false);
         c3.SetActive(false);
         c4.SetActive(false);
-        c1.GetComponent<Animator>().Play("anal");
+        transform.GetComponent<MovementScript>().anim = c1.GetComponent<Animator>();
+        //c1.GetComponent<Animator>().Play("anal");
         character = 1;
     }
 
@@ -57,7 +58,8 @@ public class CharacterChanger : MonoBehaviour {
         c2.SetActive(true);
         c3.SetActive(false);
         c4.SetActive(false);
-        c2.GetComponent<Animator>().Play("anal");
+        transform.GetComponent<MovementScript>().anim = c2.GetComponent<Animator>();
+        //c2.GetComponent<Animator>().Play("anal");
         character = 2;
     }
 
@@ -67,7 +69,8 @@ public class CharacterChanger : MonoBehaviour {
         c2.SetActive(false);
         c3.SetActive(true);
         c4.SetActive(false);
-        c3.GetComponent<Animator>().Play("anal");
+        transform.GetComponent<MovementScript>().anim = c3.GetComponent<Animator>();
+       // c3.GetComponent<Animator>().Play("anal");
         character = 3;
     }
 
@@ -77,7 +80,8 @@ public class CharacterChanger : MonoBehaviour {
         c2.SetActive(false);
         c3.SetActive(false);
         c4.SetActive(true);
-        c4.GetComponent<Animator>().Play("anal");
+        transform.GetComponent<MovementScript>().anim = c4.GetComponent<Animator>();
+        //c4.GetComponent<Animator>().Play("anal");
         character = 4;
     }
 }

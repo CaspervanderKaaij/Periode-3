@@ -17,14 +17,14 @@ public class MovementScript : MonoBehaviour {
     public GameObject cam;
     public GameObject button1;
     public GameObject button2;
-    private Animator anim;
+    public Animator anim;
     private Rigidbody rb;
     private float yVel = -9.81f;
     public float gravity;
     private bool canJump;
     // Use this for initialization
     void Start () {
-        anim = transform.GetChild(0).GetComponent<Animator>();
+       // anim = transform.GetChild(0).GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody>();
 }
 	
